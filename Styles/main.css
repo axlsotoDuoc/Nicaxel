@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+/* ---------------------- NAVBAR ------------------------- */
+/* CONTENEDOR GENERAL DEL NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem  3rem;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+/* TEXTO NICAXEL */
+.tittle {
+    font-size: 3.5rem;
+}
+
+/* PARTE CENTRAL NAVBAR (SOBRE NOSOTROS/BLOG/CONTACTO) */
+nav .nav-medio {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: 1.8rem;
+}
+
+nav .nav-medio a:hover{
+    text-decoration: underline;
+}
+
+/* ESTILO GENERAL LINKS DEL NAVBAR */
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+/* LOGIN Y CARRITO */
+nav .nav-derecha {
+    display: flex;
+    gap: .7rem;
+}
+
+/* ÍCONOS CLICKEABLES */
+nav .nav-derecha img {
+    cursor: pointer;
+}
+
+/* ANIMACIÓN HOVER EN LOS ÍCONOS */
+nav .nav-derecha img:hover {
+    scale: 1.1;
+}
+
+/* HEADER */
+.banner-div {
+    text-align: center;
+    padding: .8rem;
+    font-size: 1.5rem;
+    background: black;
+    color: white;
+}
+
+.banner-div span span {
+    color: red;
+}
+
+/* HEADER */
+/* CONTENEDOR PRINCIPAL DEL HEADER */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 5rem 15rem;
+}
+
+/* IMAGEN DEL PERFUME */
+header img {
+    width: 70rem;
+    height: 50rem;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* TEXTO EN EL HEADER*/
+.header-contenido {
+    display: grid;
+    gap: 1.5rem;
+    padding-right: 15rem;
+}
+
+/* TÍTULO PRINCIPAL */
+header h1 {
+    font-size: 10rem;
+    font-weight: 400;
+}
+
+/* PÁRRAFOS DEL HEADER */
+header p, .header-button {
+    font-size: 2rem;
+}
+
+/* BOTÓN VER CATÁLOGO */
+.header-button {
+    width: 17rem;
+    padding: 1.3rem 1rem;
+    margin-top:.7rem;
+    text-decoration: none;
+    background: rgb(43, 43, 43);
+    color: white;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+
+/* HOVER DEL BOTÓN */
+.header-button:hover {
+    background: rgb(0, 0, 0);
+}
+
+/* -------------------- CATÁLOGO -------------------- */
+#catalogo {
+    padding: 5rem 10rem;
+    background: #fafafa;
+}
+
+#catalogo h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Cada producto como tarjeta */
+.producto {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Efecto hover en cada tarjeta */
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Imagenes de productos */
+.producto img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: .5rem;
+}
+
+/* Nombre del perfume */
+.producto h3 {
+    font-size: 1.4rem;
+    margin: 1rem 0 .5rem;
+}
+
+/* Precio */
+.producto p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Botón comprar */
+.btn-comprar {
+    display: inline-block;
+    padding: .6rem 1.2rem;
+    background: rgb(43, 43, 43);
+    color: white;
+    text-decoration: none;
+    border-radius: .5rem;
+    transition: background .2s ease;
+}
+
+.btn-comprar:hover {
+    background: rgb(15, 15, 15);
+}
