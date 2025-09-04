@@ -77,6 +77,11 @@ nav {
     font-weight: bolder;
 }
 
+.nav-item:last-of-type {
+    padding-top: 1rem;
+    border-top: 1px solid black;
+}
+
 .burger {
     display: block;
     cursor: pointer;
@@ -120,6 +125,15 @@ nav .nav-medio {
     align-items: center;
     gap: 3rem;
     font-size: 1.8rem;
+}
+
+nav .nav-derecha {
+    display: flex;
+}
+
+nav .nav-derecha span{
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
 
 nav .nav-medio a:hover{
@@ -224,6 +238,165 @@ header p, .header-button {
     background: rgb(0, 0, 0);
 }
 
+/* LANZAMIENTO BANNER */
+.banner-lanzamiento {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.3rem;
+    background: rgb(241, 241, 241);
+}
+
+.banner-lanzamiento-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+.banner-lanzamiento-text {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.banner-lanzamiento-text span {
+    font-size: 1.3rem;
+}
+
+.banner-lanzamiento-text span:first-of-type{
+    font-weight: bolder;
+}
+
+.lanzamiento {
+    text-align: center;
+}
+
+.lanzamiento img, .perfume-card img{
+    width: 100%;
+    height: auto;
+}
+
+.lanzamiento-img-02 {
+    display: none;
+}
+
+/* LOS MÁS VENDIDOS */
+
+.mas-vendidos {
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.mas-vendidos h3 {
+    margin-left: 1.3rem;
+    font-size: 2.5rem;
+}
+
+.mas-vendidos a {
+    margin-left: 1.3rem;
+    font-size: 1.4rem;
+    color: red;
+    text-decoration: underline;
+}
+
+.perfumes-carrusel {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+
+.perfume {
+    flex: 1 0 auto;
+    width: 200px;
+    height: 400px;
+}
+
+.perfume-card-contenido {
+    padding-left: 1.5rem;
+}
+
+.perfume-card:first-of-type {
+    margin-left: 1rem;
+}
+
+.perfume-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 27rem;
+    padding-right: .5rem;
+    border-right: 1px solid rgb(230, 230, 230);
+}
+
+.perfume-card img {
+    width: 150px;
+}
+
+.descripcion-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.marca {
+    font-size: 1.3rem;
+    color: rgb(155, 155, 155);
+}
+
+.descripcion {
+    font-size: 1.7rem;
+    font-weight: bolder;
+    color: rgb(70, 70, 70);
+    line-height: 2.5rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: .5rem;
+}
+
+.rating span:last-of-type {
+    font-size: 1.4rem;
+}
+
+.precio {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    font-size: 1.7rem;
+}
+
+.precio span:first-of-type {
+    font-weight: bolder;
+}
+
+.precio span:last-of-type {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: rgb(119, 119, 119);
+}
+
+.addCarrito {
+    cursor: pointer;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1.7rem;
+    padding: 1.2rem 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 3rem;
+    color: white;
+    background: red;
+}
+
+.addCarrito:hover {
+    background: rgb(206, 74, 74);
+}
+
 /* MEDIA QUERYS */
 
 @media screen and (width > 460px) {
@@ -284,6 +457,14 @@ header p, .header-button {
 
     .header-contenido {
         padding-right: 10rem;
+    }
+
+    .lanzamiento-img-01 {
+        display: none;
+    }
+
+    .lanzamiento-img-02 {
+        display: block;
     }
 }
 
