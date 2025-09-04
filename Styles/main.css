@@ -293,7 +293,7 @@ header p, .header-button {
 }
 
 .mas-vendidos a {
-    margin-left: 1.3rem;
+    margin-left: 1.8rem;
     font-size: 1.4rem;
     color: red;
     text-decoration: underline;
@@ -303,13 +303,13 @@ header p, .header-button {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    overflow: scroll;
+    overflow-x: scroll;
 }
 
 .perfume {
     flex: 1 0 auto;
     width: 200px;
-    height: 400px;
+    height: auto;
 }
 
 .perfume-card-contenido {
@@ -488,6 +488,45 @@ header p, .header-button {
     }
 }
 
+@media screen and (width > 1015px) {
+    .perfume {
+        flex: 0;
+    }
+
+    .perfumes-carrusel {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .perfume-card {
+        border: none;
+    }
+
+    .perfume-card img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .addCarrito {
+        width: 100%;
+    }
+
+    .bourbon-img {
+        height: 20rem;
+    }   
+
+    .mas-vendidos h3 {
+        margin-left: 2rem;
+        font-size: 3.5rem;
+    }
+
+    .mas-vendidos a {
+        margin-left: 3rem;
+        font-size: 2rem;
+    }
+}
+
 @media screen and (width > 1060px) {
 
     header .header-img-01 {
@@ -546,5 +585,38 @@ header p, .header-button {
 
     .header-button {
         width: 18.5rem;
+    }
+}
+
+@media screen and (width > 1550px) {
+
+    .marca {
+        font-size: 1.6rem;
+    }
+
+    .descripcion {
+        font-size: 2rem;
+    }
+
+    .rating {
+        font-size: 1.5rem;
+    }
+
+    .rating span:last-of-type {
+        font-size: 1.7rem;
+    }
+
+    .precio {
+        font-size: 2.3rem;
+    }
+
+    .precio span:last-of-type {
+        font-size: 1.5rem;
+    }
+
+    .addCarrito {
+        width: 100%;
+        padding: 1.2rem 0;
+        font-size: 1.7rem;
     }
 }
