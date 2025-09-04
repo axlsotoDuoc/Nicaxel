@@ -12,31 +12,73 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <title>Nicaxel | Sobre nosotros</title>
+
+    <script src="/JS/burger.js"></script>
 </head>
 <body>
+        <div class="sticky">
+
         <!-- Banner -->
         <div class="banner-div">
             <span class="banner">Aprovecha solo por esta semana hasta un <span>60%</span> en productos seleccionados. <a href="catalogo.html" class="pincha">Pincha aquí para más info.</a> <i class="fa-solid fa-hand-pointer fa-xs" style="color: #ffffff;"></i></span>
         </div>
 
-        <nav>
+        <!-- Navbar Mobile -->
+        <nav class="navbar-mobile">
+            <!-- Título -->
+            <a href="index.html" class="tittle">NICAXEL</a>
+
+            <!-- Links -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="catalogo.html" class="nav-link">Catálogo</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Ver carrito 🛒</a>
+                </li>
+            </ul>
+
+            <!-- Burger -->
+            <div class="burger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        <!-- ------------------------------------------- -->
+
+        <!-- Navbar Dekstop -->
+        <nav class="navbar-dekstop">
             <!-- Título -->
             <a href="index.html" class="tittle">NICAXEL</a>
 
             <!-- Navbar medio -->
                 <div class="nav-medio">
-                            <span>Sobre nosotros</span>
+                            <a href="nosotros.html">Sobre nosotros</a>
                             <a href="#">Blog</a>
-                            <a href="#" class="navbar-contacto">Contacto</a>
+                            <a href="contacto.html" class="navbar-contacto">Contacto</a>
                 </div>
-            </div>
-
+            
             <!-- Navbar derecha -->
             <div class="nav-derecha">
-                <a href="login.html"><img src="Img/login.svg"></a>
-                <a href="carrito.html"><img src="Img/carrito.svg"></a>
+                <a href="#"><img src="Img/carrito.svg"></a>
             </div>
         </nav>
+        <!-- ------------------------------------------- -->
+    </div>   
 
     <!-- FAQ´s -->
     <main class="main-faq">
@@ -52,7 +94,7 @@
             <!-- GARANTÍAS -->
 
             <div class="acordeon-h2">
-                <h2>| Garantías</h2>
+                <h2>Garantías</h2>
             </div>
 
             <!--DETAILS -->
@@ -95,7 +137,7 @@
             <!-- MÉTODOS DE PAGO -->
 
             <div class="acordeon-h2">
-                <h2>| Métodos de pago</h2>
+                <h2>Métodos de pago</h2>
             </div>
 
             <!--DETAIL 01 -->
@@ -117,7 +159,7 @@
             <!-- NUESTRA HISTORIA -->
 
             <div class="acordeon-h2">
-                <h2>| Sobre nosotros</h2>
+                <h2>Sobre nosotros</h2>
             </div>
 
             <!--DETAIL 01 -->

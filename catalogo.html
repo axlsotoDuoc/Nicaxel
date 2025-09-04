@@ -5,17 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicaxel | Catálogo</title>
     <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="Styles/catalogo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="/JS/burger.js"></script>
+
 </head>
 <body>
+        <div class="sticky">
+
         <!-- Banner -->
         <div class="banner-div">
-            <span class="banner">Aprovecha solo por esta semana hasta un <span>60%</span> en productos seleccionados.</span>
+            <span class="banner">Aprovecha solo por esta semana hasta un <span>60%</span> en productos seleccionados. <a href="catalogo.html" class="pincha">Pincha aquí para más info.</a> <i class="fa-solid fa-hand-pointer fa-xs" style="color: #ffffff;"></i></span>
         </div>
 
-        <nav>
+        <!-- Navbar Mobile -->
+        <nav class="navbar-mobile">
+            <!-- Título -->
+            <a href="index.html" class="tittle">NICAXEL</a>
+
+            <!-- Links -->
+            <ul class="nav-menu">
+
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="nosotros.html" class="nav-link">Sobre nosotros</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Ver carrito 🛒</a>
+                </li>
+            </ul>
+
+            <!-- Burger -->
+            <div class="burger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        <!-- ------------------------------------------- -->
+
+        <!-- Navbar Dekstop -->
+        <nav class="navbar-dekstop">
             <!-- Título -->
             <a href="index.html" class="tittle">NICAXEL</a>
 
@@ -23,16 +68,16 @@
                 <div class="nav-medio">
                             <a href="nosotros.html">Sobre nosotros</a>
                             <a href="#">Blog</a>
-                            <a href="#" class="navbar-contacto">Contacto</a>
+                            <a href="contacto.html" class="navbar-contacto">Contacto</a>
                 </div>
-            </div>
-
+            
             <!-- Navbar derecha -->
             <div class="nav-derecha">
-                <a href="login.html"><img src="Img/login.svg"></a>
-                <a href="carrito.html"><img src="Img/carrito.svg"></a>
+                <a href="#"><img src="Img/carrito.svg"></a>
             </div>
         </nav>
+        <!-- ------------------------------------------- -->
+    </div>   
 
     <!-- CATÁLOGO -->
     <section id="catalogo">

@@ -16,6 +16,10 @@ a {
     text-decoration: none;
 }
 
+ul li {
+    list-style: none;
+}
+
 @view-transition {
     navigation: auto;
 }
@@ -25,19 +29,94 @@ a {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.8rem  3rem;
+    align-items: start;
+    padding: 1rem 2rem;
     border-bottom: 1px solid rgb(0, 0, 0);
+    background: white;
 }
+
+.navbar-dekstop {
+    display: none;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Navbar Mobile */
 
 /* TEXTO NICAXEL */
 .tittle {
-    font-size: 3.5rem;
+    font-size: 2.4rem;
+    font-weight: 600;
 }
+
+/* NAVBAR MOBILE */
+
+.nav-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: -100%;
+    width: 100%;
+    transition: .3s;
+    background: white;
+    padding: 2rem;
+    border-bottom: 2px solid black;
+}
+
+.nav-menu.active {
+    left: 0;
+}
+
+.nav-item {
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.burger {
+    display: block;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background: black;
+    color: black;
+}
+
+.burger.active .bar:nth-child(2){
+    opacity: 0;
+}
+
+.burger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Desactiva el scroll del body */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* NAVBAR DEKSTOP */
 
 /* PARTE CENTRAL NAVBAR (SOBRE NOSOTROS/BLOG/CONTACTO) */
 nav .nav-medio {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 3rem;
     font-size: 1.8rem;
@@ -53,14 +132,9 @@ nav a {
     text-decoration: none;
 }
 
-/* LOGIN Y CARRITO */
-nav .nav-derecha {
-    display: flex;
-    gap: .7rem;
-}
-
 /* ÍCONOS CLICKEABLES */
 nav .nav-derecha img {
+    width: 25px;
     cursor: pointer;
 }
 
@@ -73,7 +147,7 @@ nav .nav-derecha img:hover {
 .banner-div {
     text-align: center;
     padding: .8rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     background: black;
     color: white;
 }
@@ -83,7 +157,6 @@ nav .nav-derecha img:hover {
 }
 
 .pincha {
-    font-size: 1.3rem;
     text-decoration: underline;
     color: white;
 }
@@ -96,13 +169,20 @@ nav .nav-derecha img:hover {
 /* CONTENEDOR PRINCIPAL DEL HEADER */
 header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: start;
-    padding: 5rem 15rem;
 }
 
 /* IMAGEN DEL PERFUME */
-header img {
+header .header-img-01 {
+    object-fit: cover;
+    width: 100%;
+    height: 15rem;
+}
+
+/* IMAGEN DEL PERFUME */
+header .header-img-02 {
+    display: none;
     width: 70rem;
     height: 50rem;
     object-fit: contain;
@@ -112,25 +192,26 @@ header img {
 /* TEXTO EN EL HEADER*/
 .header-contenido {
     display: grid;
-    gap: 1.5rem;
-    padding-right: 15rem;
+    gap: 1.3rem;
+    padding: 2rem;
+    padding-right: 7rem;
 }
 
 /* TÍTULO PRINCIPAL */
 header h1 {
-    font-size: 10rem;
+    font-size: 4rem;
     font-weight: 400;
 }
 
 /* PÁRRAFOS DEL HEADER */
 header p, .header-button {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 /* BOTÓN VER CATÁLOGO */
 .header-button {
-    width: 17rem;
-    padding: 1.3rem 1rem;
+    width: 15.5rem;
+    padding: 1rem;
     margin-top:.7rem;
     text-decoration: none;
     background: rgb(43, 43, 43);
@@ -139,78 +220,150 @@ header p, .header-button {
     transition: .2s all ease;
 }
 
-/* HOVER DEL BOTÓN */
 .header-button:hover {
     background: rgb(0, 0, 0);
 }
 
-/* -------------------- CATÁLOGO -------------------- */
-#catalogo {
-    padding: 5rem 10rem;
-    background: #fafafa;
+/* MEDIA QUERYS */
+
+@media screen and (width > 460px) {
+
+    .tittle {
+        font-size: 3rem;
+    }
+
+    header .header-img-01 {
+        height: 23rem;
+    }
+
+    .banner-div {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    /* TÍTULO PRINCIPAL */
+    header h1 {
+        font-size: 5rem;
+    }
+
+    /* PÁRRAFOS DEL HEADER */
+    header p, .header-button {
+        font-size: 2rem;
+    }
+
+    .header-button {
+        width: 17rem;
+    }
 }
 
-#catalogo h2 {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    text-align: center;
+@media screen and (width > 700px) {
+
+    nav {
+        align-items: center;
+    }
+
+    .navbar-dekstop {
+        display: flex;
+    }
+
+    .navbar-mobile {
+        display: none;
+    }
+
+    nav {
+        padding: 1rem 3rem;
+    }
+
+    nav .nav-medio {
+        display: flex;
+    }
+    
+    header .header-img-01 {
+        height: 30rem;
+    }
+
+    .header-contenido {
+        padding-right: 10rem;
+    }
 }
 
-.catalogo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+@media screen and (width > 800px) {
+
+    header h1 {
+        font-size: 6rem;
+    }
+
+    header p, .header-button {
+        font-size: 2rem;
+    }
+
+    .banner-div {
+        padding: 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    .header-contenido {
+        padding-right: 20rem;
+    }
 }
 
-/* Cada producto como tarjeta */
-.producto {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform .2s ease, box-shadow .2s ease;
+@media screen and (width > 1060px) {
+
+    header .header-img-01 {
+        height: 35rem;
+    }
+
+    .header-contenido {
+        padding-right: 30rem;
+    }
 }
 
-/* Efecto hover en cada tarjeta */
-.producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+@media screen and (width > 1060px) {
+
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 3rem 6rem;
+    }
+
+    header .header-img-01 {
+        display: none;
+    }
+
+    .header-contenido {
+        padding: 0;
+        gap: 2rem;
+    }
+
+    header .header-img-02 {
+        display: block;
+        width: 70rem;
+        height: 40rem;
+        object-fit: contain;
+        border-radius: 50%;
+    }
 }
 
-/* Imagenes de productos */
-.producto img {
-    width: 100%;
-    height: 250px; 
-    object-fit: cover; 
-    border-radius: .5rem;
-}
+@media screen and (width > 1400px) {
 
-/* Nombre del perfume */
-.producto h3 {
-    font-size: 1.4rem;
-    margin: 1rem 0 .5rem;
-}
+    header .header-img-02 {
+        height: 50rem;
+    }
 
-/* Precio */
-.producto p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
-}
+    header h1 {
+        font-size: 9rem;
+    }
 
-/* Botón comprar */
-.btn-comprar {
-    display: inline-block;
-    padding: .6rem 1.2rem;
-    background: rgb(43, 43, 43);
-    color: white;
-    text-decoration: none;
-    border-radius: .5rem;
-    transition: background .2s ease;
-}
+    header p, .header-button {
+        font-size: 2.2rem;
+    }
 
-.btn-comprar:hover {
-    background: rgb(15, 15, 15);
+    .header-contenido {
+        padding-right: 0;
+    }
+
+    .header-button {
+        width: 18.5rem;
+    }
 }
