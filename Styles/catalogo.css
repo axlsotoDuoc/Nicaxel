@@ -67,3 +67,14 @@
 .btn-comprar:hover {
     background: rgb(15, 15, 15);
 }
+
+.etiqueta-descuento {
+    background-color: #ff3b3b;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+}
+
