@@ -91,3 +91,7 @@ form button {
 form button:hover {
     background: rgb(41, 41, 41);
 }
+
+footer {
+    margin-top: 10rem;
+}
