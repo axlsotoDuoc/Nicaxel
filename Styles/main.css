@@ -77,9 +77,15 @@ nav {
     font-weight: bolder;
 }
 
-.nav-item:last-of-type {
-    padding-top: 1rem;
+.nav-item:nth-of-type(5) {
+    padding-top: 2rem;
     border-top: 1px solid black;
+}
+
+.login-flex {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 
 .burger {
@@ -128,6 +134,11 @@ nav .nav-medio {
 }
 
 nav .nav-derecha {
+    display: flex;
+    gap: .7rem;
+}
+
+.carrito-flex {
     display: flex;
 }
 
@@ -304,6 +315,8 @@ header p, .header-button {
     align-items: center;
     flex-wrap: nowrap;
     overflow-x: scroll;
+    padding-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .perfume {

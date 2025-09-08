@@ -27,7 +27,7 @@ h1 {
 }
 
 .formulario-div h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     padding: 1.2rem 1.7rem;
     border-bottom: 1px solid rgb(226, 226, 226);
 }
@@ -45,7 +45,7 @@ form label:first-of-type {
 
 form label {
     margin-top: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bolder;
 }
 
@@ -76,6 +76,7 @@ form input::placeholder, form textarea::placeholder {
 
 form button {
     width: 15rem;
+    font-size: 1.7rem;
     font-weight: 600;
     margin: 0 auto;
     margin-top: 1rem;

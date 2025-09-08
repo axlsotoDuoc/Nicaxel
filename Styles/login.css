@@ -1,0 +1,26 @@
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.checkbox {
+    cursor: pointer;
+}
+
+.remember-register-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .4rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.register-here {
+    cursor: pointer;
+    color: rgb(21, 78, 201);
+}
+
+.register-here:hover {
+    text-decoration: underline;
+}

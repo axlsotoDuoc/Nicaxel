@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewporT" content="width=device-width, initial-scale=1.0">
-    <title>Nicaxel | Contacto</title>
+    <title>Nicaxel | Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="stylesheet" href="Styles/contacto.css">
+    <link rel="stylesheet" href="Styles/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -31,7 +32,7 @@
             <ul class="nav-menu">
 
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link">Inicio</a>
                 </li>
 
                 <li class="nav-item">
@@ -39,24 +40,19 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
-                </li>
-
-                <li class="nav-item">
                     <a href="catalogo.html" class="nav-link">Catálogo</a>
                 </li>
 
                 <li class="nav-item">
-                    <div class="login-flex">
-                        <a href="login.html" class="nav-link">Iniciar sesión</a>
-                        <img src="./Img/login.svg" alt="">
-                    </div>
+                    <a href="contacto.html" class="nav-link">Contacto</a>
                 </li>
 
-
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Ver carrito 🛒(2)</a>
+                    <a href="#" class="nav-link">Ver carrito 🛒</a>
                 </li>
             </ul>
 
@@ -83,46 +79,48 @@
             
             <!-- Navbar derecha -->
             <div class="nav-derecha">
-                <a href="login.html"><img src="./Img/login.svg"></a>
-                <div class="carrito-flex">
-                    <a href="#"><img src="./Img/carrito.svg"></a>
-                    <span>(2)</span>
-                </div>
+                <a href="#"><img src="Img/carrito.svg"></a>
             </div>
         </nav>
         <!-- ------------------------------------------- -->
-    </div> 
+    </div>   
     
         <main>
-            <h1>Contáctanos</h1>
+            <h1>Regístrate o inicia sesión</h1>
 
             <section class="formulario-div">
                 <!-- Título del formulario -->
                 <h2>Información requerida</h2>
 
                 <!-- Contenido formulario -->
-                <form onsubmit="return validarNombre();" id="miFormulario">
+                <form id="formRegistro" onsubmit="return validarRegistro();">
+                    <!-- Correo electrónico -->
+                    <label for="correo">Correo electrónico*</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
+                    <span id="error-correo" style="color: rgb(179, 56, 56);"></span>
 
-                        <!-- Nombre -->
-                        <label for="nombre">Nombre y apellido/s*</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre y al menos 1 apellido">
-                        <span id="error-nombre" style="color: rgb(179, 56, 56);"></span>
+                    <!-- Contraseña -->
+                    <label for="password1">Contraseña*</label>
+                    <input type="password" id="password1" name="password1" placeholder="Ingresa tu nueva contraseña aquí" required>
+                    <span id="error-password" style="color: rgb(179, 56, 56);"></span>
 
-                        <!-- Correo electrónico -->
-                        <label for="">Correo electrónico*</label>
-                        <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
-                        <span id="error-correo" style="color: rgb(179, 56, 56);"></span>
+                    <!-- Repetir Contraseña -->
+                    <label for="password2">Repetir contraseña*</label>
+                    <input type="password" id="password2" name="password2" placeholder="Repite la contraseña creada anteriormente" required>
+                    <span id="error-repeat" style="color: rgb(179, 56, 56);"></span>
 
-                        <!-- Mensaje -->
-                        <label for="mensaje">Mensaje (máx 200 caracteres):</label>
-                        <textarea id="mensaje" name="mensaje" placeholder="Déjanos tu mensaje aquí..." maxlength="200" oninput="actualizarContador()" rows="5" cols="30" required></textarea>
-                        <span id="error-mensaje" style="color: rgb(179, 56, 56);"></span>
-                        <p id="contador">200 caracteres restantes</p>
-
-                        <!-- ENVIAR -->
-                        <button type="submit">Enviar</button>
+                    <div class="remember-register-flex">
+                        <div class="remember-me">
+                            <input type="checkbox" class="checkbox">
+                            Recordar contraseña
+                        </div>
+                        <span>¿Ya tienes una cuenta creada? <a href="login.html" class="register-here">Pincha aquí</a></span>
                     </div>
+
+                    <!-- ENVIAR -->
+                    <button type="submit">Registrar</button>
                 </form>
+
             </section>
         </main>
 
