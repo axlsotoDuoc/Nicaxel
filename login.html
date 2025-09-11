@@ -89,36 +89,48 @@
         <main>
             <h1>Regístrate o inicia sesión</h1>
 
-            <section class="formulario-div">
-                <!-- Título del formulario -->
-                <h2>Información requerida</h2>
+<section class="formulario-div">
+    <!-- Título del formulario -->
+    <div class="titulo-form">
+        <h2>Selecciona tipo de login</h2>
+        <div class="admin-usuario-flex">
+            <div class="remember-me">
+                <input type="checkbox" class="checkbox rol" id="admin">
+                ADMIN
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" class="checkbox rol" id="usuario">
+                USUARIO
+            </div>
+        </div>
+        <!-- Aquí mostraremos error si no se selecciona -->
+        <span id="error-rol" style="color: rgb(179, 56, 56); display:block; text-align:center; margin-top:5px;"></span>
+    </div>    
 
-                <!-- Contenido formulario -->
-                <form id="miFormulario" onsubmit="return validarFormulario();">
-                    <!-- Correo electrónico -->
-                    <label for="correo">Correo electrónico*</label>
-                    <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
-                    <span id="error-correo" style="color: rgb(179, 56, 56);"></span>
+    <!-- Contenido formulario -->
+    <form id="miFormulario" onsubmit="return validarLogin();">
+        <!-- Correo electrónico -->
+        <label for="correo">Correo electrónico*</label>
+        <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
+        <span id="error-correo" style="color: rgb(179, 56, 56);"></span>
 
-                    <!-- Contraseña -->
-                    <label for="password">Contraseña*</label>
-                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña aquí" required>
-                    <span id="error-password" style="color: rgb(179, 56, 56);"></span>
+        <!-- Contraseña -->
+        <label for="password">Contraseña*</label>
+        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña aquí" required>
+        <span id="error-password" style="color: rgb(179, 56, 56);"></span>
 
-                    <div class="remember-register-flex">
-                        <div class="remember-me">
-                            <input type="checkbox" class="checkbox">
-                            Recordar contraseña
-                        </div>
-                        <span>¿No has creado una cuenta? <a href="register.html" class="register-here">Regístrate aquí</a></span>
-                    </div>
+        <div class="remember-register-flex">
+            <div class="remember-me">
+                <input type="checkbox" class="checkbox" id="recordar">
+                Recordar contraseña
+            </div>
+            <span>¿No has creado una cuenta? <a href="register.html" class="register-here">Regístrate aquí</a></span>
+        </div>
 
-                    <!-- ENVIAR -->
-                    <button type="submit">Iniciar sesión</button>
-                </form>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+</section>
 
-            </section>
-        </main>
         <!-- FOOTER -->
 
         <footer>
@@ -155,6 +167,6 @@
         <p class="licencia">&copy Diseñado y desarrollado por Axel Soto y Nicolás Carvajal.</p>
         
 
-<script src="./js/validaciones.js"></script>
+<script src="./js/login.js"></script>
 <script src="./js/burger.js"></script>
 </body>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="stylesheet" href="Styles/contacto.css">
     <link rel="stylesheet" href="Styles/login.css">
+    <link rel="stylesheet" href="Styles/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -89,40 +90,40 @@
         <main>
             <h1>Regístrate o inicia sesión</h1>
 
-            <section class="formulario-div">
-                <!-- Título del formulario -->
-                <h2>Información requerida</h2>
+        <section class="formulario-div">
+            <!-- Título del formulario -->
+            <h2>Información requerida</h2>
 
-                <!-- Contenido formulario -->
-                <form id="formRegistro" onsubmit="return validarRegistro();">
-                    <!-- Correo electrónico -->
-                    <label for="correo">Correo electrónico*</label>
-                    <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
-                    <span id="error-correo" style="color: rgb(179, 56, 56);"></span>
+            <!-- Contenido formulario -->
+            <form id="formRegistro" onsubmit="return validarRegistro();">
+                <!-- Correo electrónico -->
+                <label for="correo">Correo electrónico*</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
+                <span id="error-correo" style="color: rgb(179, 56, 56);"></span>
 
-                    <!-- Contraseña -->
-                    <label for="password1">Contraseña*</label>
-                    <input type="password" id="password1" name="password1" placeholder="Ingresa tu nueva contraseña aquí" required>
-                    <span id="error-password" style="color: rgb(179, 56, 56);"></span>
+                <!-- Contraseña -->
+                <label for="password1">Contraseña*</label>
+                <input type="password" id="password1" name="password1" placeholder="Ingresa tu nueva contraseña" required>
+                <span id="error-password" style="color: rgb(179, 56, 56);"></span>
 
-                    <!-- Repetir Contraseña -->
-                    <label for="password2">Repetir contraseña*</label>
-                    <input type="password" id="password2" name="password2" placeholder="Repite la contraseña creada anteriormente" required>
-                    <span id="error-repeat" style="color: rgb(179, 56, 56);"></span>
+                <!-- Repetir Contraseña -->
+                <label for="password2">Repetir contraseña*</label>
+                <input type="password" id="password2" name="password2" placeholder="Repite la contraseña ingresada anteriormente" required>
+                <span id="error-repeat" style="color: rgb(179, 56, 56);"></span>
 
-                    <div class="remember-register-flex">
-                        <div class="remember-me">
-                            <input type="checkbox" class="checkbox">
-                            Recordar contraseña
-                        </div>
-                        <span>¿Ya tienes una cuenta creada? <a href="login.html" class="register-here">Pincha aquí</a></span>
+                <div class="remember-register-flex">
+                    <div class="remember-me">
+                        <input type="checkbox" class="checkbox">
+                        Recordar contraseña
                     </div>
+                    <span>¿Ya tienes cuenta ? <a href="login.html" class="register-here">Click aquí</a></span>
+                </div>
 
-                    <!-- ENVIAR -->
-                    <button type="submit">Registrar</button>
-                </form>
+                <!-- ENVIAR -->
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
 
-            </section>
         </main>
 
         <!-- FOOTER -->
@@ -159,6 +160,6 @@
 
         </footer>
         <p class="licencia">&copy Diseñado y desarrollado por Axel Soto y Nicolás Carvajal.</p>
-<script src="./js/validaciones.js"></script>
+<script src="./js/register.js"></script>
 <script src="./js/burger.js"></script>
 </body>

@@ -68,6 +68,10 @@ nav {
     border-bottom: 2px solid black;
 }
 
+nav .nav-medio span {
+    border-bottom: 2px solid black;
+}
+
 .nav-menu.active {
     left: 0;
 }
