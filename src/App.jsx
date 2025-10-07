@@ -1,22 +1,19 @@
-import React from 'react'
-import '/Styles/index.css'
-import { UserCard } from './UserCard.jsx'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/home'
 
-export function App () {
-    return (
-        <>
-            <UserCard isFollowing
-                userName = 'axlsotooo' 
-                name = 'Axel P. Soto'/>
 
-            <UserCard isFollowing={false}   
-                userName = 'axlsotooo' 
-                name = 'Axel P. Soto '/>
+function App() {
 
-            <UserCard isFollowing 
-                userName = 'axlsotooo' 
-                name = 'Axel P. Soto '/>
-        </>
+return (
 
-    )
+
+    <>
+        <Home />
+    </>
+
+
+);
 }
+
+export default App;
