@@ -1,171 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewporT" content="width=device-width, initial-scale=1.0">
-    <title>Nicaxel | Carrito</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Styles/main.css">
-    <link rel="stylesheet" href="Styles/carrito.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/carrito.css";
 
-    <script src="https://kit.fontawesome.com/1a2d8e6216.js" crossorigin="anonymous"></script>
+const Carrito = () => {
+    return (
+        <>
+        <div className="sticky">
 
-    <link rel="icon" href="/Img/perfume.jpg">
-</head>
-<body>
-    <div class="sticky">
+            {/* Navbar Mobile */}
+            <nav className="navbar-mobile">
+            {/* Título */}
+            <Link to="/" className="tittle">
+                NICAXEL
+            </Link>
 
-        <!-- Banner -->
-        <div class="banner-div">
-            <span class="banner">Aprovecha solo por esta semana hasta un <span>60%</span> en productos seleccionados. <a href="catalogo.html" class="pincha">Pincha aquí para más info.</a> <i class="fa-solid fa-hand-pointer fa-xs" style="color: #ffffff;"></i></span>
-        </div>
-
-        <!-- Navbar Mobile -->
-        <nav class="navbar-mobile">
-            <!-- Título -->
-            <a href="index.html" class="tittle">NICAXEL</a>
-
-            <!-- Links -->
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="nosotros.html" class="nav-link">Sobre nosotros</a>
+            {/* Links */}
+            <ul className="nav-menu">
+                <li className="nav-item">
+                <Link to="/nosotros" className="nav-link">
+                    Sobre nosotros
+                </Link>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
+                <li className="nav-item">
+                <Link to="/" className="nav-link">
+                    Blog
+                </Link>
                 </li>
 
-                <li class="nav-item">
-                    <a href="catalogo.html" class="nav-link">Catálogo</a>
+                <li className="nav-item">
+                <Link to="/catalogo" className="nav-link">
+                    Catálogo
+                </Link>
                 </li>
 
-                <li class="nav-item">
-                    <a href="contacto.html" class="nav-link">Contacto</a>
+                <li className="nav-item">
+                <Link to="/contacto" className="nav-link">
+                    Contacto
+                </Link>
                 </li>
 
-                <li class="nav-item">
-                    <a href="register.html" class="nav-link">Registrarse</a>
+                <li className="nav-item">
+                <Link to="/register" className="nav-link">
+                    Registrarse
+                </Link>
                 </li>
 
-                <li class="nav-item">
-                    <div class="login-flex">
-                        <a href="contacto.html" class="nav-link">Iniciar sesión</a>
-                        <img src="./Img/login.svg" alt="">
-                    </div>
+                <li className="nav-item">
+                <div className="login-flex">
+                    <Link to="/login" className="nav-link">
+                    Iniciar sesión
+                    </Link>
+                    <img src="/Img/login.svg" alt="icono login" />
+                </div>
                 </li>
-
             </ul>
 
-            <!-- Burger -->
-            <div class="burger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            {/* Burger */}
+            <div className="burger">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
             </div>
-        </nav>
-        <!-- ------------------------------------------- -->
+            </nav>
 
-        <!-- Navbar Dekstop -->
-        <nav class="navbar-dekstop">
-            <!-- Título -->
-            <a href="index.html" class="tittle">NICAXEL</a>
+            {/* Navbar Desktop */}
+            <nav className="navbar-dekstop">
+            <Link to="/" className="tittle">
+                NICAXEL
+            </Link>
 
-            <!-- Navbar medio -->
-                <div class="nav-medio">
-                            <a href="nosotros.html">Sobre nosotros</a>
-                            <a href="#">Blog</a>
-                            <a href="contacto.html" class="navbar-contacto">Contacto</a>
-                </div>
-            
-            <!-- Navbar derecha -->
-            <div class="nav-derecha">
-                <a href="login.html"><img src="./Img/login.svg" alt="ícono de login"></a>
+            <div className="nav-medio">
+                <Link to="/nosotros">Sobre nosotros</Link>
+                <Link to="/">Blog</Link>
+                <Link to="/contacto" className="navbar-contacto">
+                Contacto
+                </Link>
             </div>
-        </nav>
-        <!-- ------------------------------------------- -->
-    </div>    
-    <main>
-        <section class="resumen">
-            <article class="resumen-tittle-flex">
+
+            <div className="nav-derecha">
+                <Link to="/login">
+                <img src="/Img/login.svg" alt="ícono de login" />
+                </Link>
+            </div>
+            </nav>
+        </div>
+
+        {/* Contenido principal */}
+        <main>
+            <section className="resumen">
+            <article className="resumen-tittle-flex">
                 <h3>Resumen del pedido</h3>
                 <span>$59.990</span>
             </article>
-        </section>
+            </section>
 
-        <section class="detalle">
-            <article class="detalle-flex">
-                <img src="./Img/Versace-Eros-Flame.jpeg" alt="">
-                <span class="perfume-nombre">Versace Versace Eros Flame Men EDP 100 ML (H)</span>
-                <span class="perfume-precio">$59.990</span>
+            <section className="detalle">
+            <article className="detalle-flex">
+                <img src="/Img/Versace-Eros-Flame.jpeg" alt="Versace Eros Flame" />
+                <span className="perfume-nombre">
+                Versace Versace Eros Flame Men EDP 100 ML (H)
+                </span>
+                <span className="perfume-precio">$59.990</span>
             </article>
-        </section>
+            </section>
 
-        <section class="codigo">
-            <article class="codigo-flex"> 
-                <input type="text" placeholder="Código de descuento">
-                <span class="aplicar">Aplicar</span>
+            <section className="codigo">
+            <article className="codigo-flex">
+                <input type="text" placeholder="Código de descuento" />
+                <span className="aplicar">Aplicar</span>
             </article>
-        </section>
+            </section>
 
-        <section class="subtotal">
-            <article class="subtotal-flex">
+            <section className="subtotal">
+            <article className="subtotal-flex">
                 <span>Subtotal</span>
                 <span>$59.990</span>
             </article>
-            <article class="subtotal-flex">
+            <article className="subtotal-flex">
                 <span>Envío</span>
                 <span>Introduce la dirección de envío</span>
             </article>
-        </section>
+            </section>
 
-        <section class="total">
-            <article class="total-flex">
+            <section className="total">
+            <article className="total-flex">
                 <h3>Total</h3>
-                <div class="total-precio-flex">
-                    <span>CLP</span>
-                    <span>$59.990</span>
+                <div className="total-precio-flex">
+                <span>CLP</span>
+                <span>$59.990</span>
                 </div>
             </article>
-        </section>
-        <div class="pagar-button-div">
-            <a href="index.html" class="pagar">Completar pago</a>
-        </div>
-    </main>
-    <!-- FOOTER -->
+            </section>
 
-        <footer>
-
-            <div class="seccion-footer">
-                <h3>Horario de atención</h3>
-                <div class="footer-links">
-                    <span>Lunes a Viernes: 09:00 - 20:30</span>
-                    <span>Sábados, Domingos y Festivos: 11:00 - 16:30</span>
-                </div>
+            <div className="pagar-button-div">
+            <Link to="/" className="pagar">
+                Completar pago
+            </Link>
             </div>
+        </main>
 
-            <div class="seccion-footer">
-                <h3>Catálogo</h3>
-                <div class="footer-links">
-                    <span>Perfumes Árabes</span>
-                    <span>Rasasi</span>
-                    <span>Carolina Herrera</span>
-                    <span>Paco Rabanne</span>
-                    <span>Y más...!</span>
-                </div>
-            </div>
+        </>
+    );
+};
 
-            <div class="seccion-footer">
-                <h3>Sobre nosotros</h3>
-                <div class="footer-links">
-                    <a href="nosotros.html">Garantías</a>
-                    <a href="nosotros.html">Métodos de pago</a>
-                    <a href="nosotros.html">Fundación</a>
-                </div>
-            </div>
-
-        </footer>
-        <p class="licencia">&copy Diseñado y desarrollado por Axel Soto y Nicolás Carvajal.</p>
-<script src="./js/burger.js"></script>
-</body>
+export default Carrito;
