@@ -1,7 +1,5 @@
-main {
-    align-content: center;
-    background: rgb(241, 241, 241);
-    
+.carrito-main {
+    background: rgb(248, 248, 248);
 }
 
 .resumen-tittle-flex {
@@ -14,7 +12,7 @@ main {
 
 .resumen-tittle-flex h3 {
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .resumen-tittle-flex span {
@@ -42,9 +40,8 @@ main {
 
 .codigo-flex {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
 }
 
 .codigo-flex input {
@@ -119,9 +116,9 @@ main {
 }
 
 @media screen and (width > 700px) {
-    main{
+    .carrito-main{
         max-width: 60rem;
-        margin: 10rem auto;
+        margin: 5rem auto 0;
         padding: 5rem;
     }
 }

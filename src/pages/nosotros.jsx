@@ -1,245 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/main.css">
-    <link rel="stylesheet" href="Styles/nosotros.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/main.css";
+import "../styles/nosotros.css";
 
-    <script src="https://kit.fontawesome.com/1a2d8e6216.js" crossorigin="anonymous"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-    <title>Nicaxel | Sobre nosotros</title>
+function Nosotros() {
+    return (
+        <>
+        <main className="main-faq">
+            <header className="header-cont nosotros-header">
+            <h1>Preguntas Frecuentes</h1>
+            <span>Conócenos más a fondo </span>
+            <p>
+                Queremos entregarles a nuestros clientes la mayor transparencia
+                posible, por eso te dejamos invitado a conocer más acerca de
+                nosotros.
+            </p>
+            </header>
 
-</head>
-<body>
-        <div class="sticky">
-
-        <!-- Banner -->
-        <div class="banner-div">
-            <span class="banner">Aprovecha solo por esta semana hasta un <span>60%</span> en productos seleccionados. <a href="catalogo.html" class="pincha">Pincha aquí para más info.</a> <i class="fa-solid fa-hand-pointer fa-xs" style="color: #ffffff;"></i></span>
-        </div>
-
-        <!-- Navbar Mobile -->
-        <nav class="navbar-mobile">
-            <!-- Título -->
-            <a href="index.html" class="tittle">NICAXEL</a>
-
-            <!-- Links -->
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="catalogo.html" class="nav-link">Catálogo</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="contacto.html" class="nav-link">Contacto</a>
-                </li>
-
-                <li class="nav-item">
-                    <div class="login-flex">
-                        <a href="login.html" class="nav-link">Iniciar sesión</a>
-                        <img src="./Img/login.svg" alt="">
-                    </div>
-                </li>
-
-
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Ver carrito 🛒(2)</a>
-                </li>
-            </ul>
-
-            <!-- Burger -->
-            <div class="burger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-        <!-- ------------------------------------------- -->
-
-        <!-- Navbar Dekstop -->
-        <nav class="navbar-dekstop">
-            <!-- Título -->
-            <a href="index.html" class="tittle">NICAXEL</a>
-
-            <!-- Navbar medio -->
-                <div class="nav-medio">
-                            <span>Sobre nosotros</span>
-                            <a href="#">Blog</a>
-                            <a href="contacto.html" class="navbar-contacto">Contacto</a>
-                </div>
-            
-            <!-- Navbar derecha -->
-            <div class="nav-derecha">
-                <a href="login.html"><img src="./Img/login.svg" alt="Icono de login"></a>
-                <div class="carrito-flex">
-                    <a href="carrito.html"><img src="./Img/carrito.svg" alt="Icono de carrito"></a>
-                    <span>(1)</span>
-                </div>
-            </div>
-        </nav>
-        <!-- ------------------------------------------- -->
-    </div>   
-
-    <!-- FAQ´s -->
-    <main class="main-faq">
-        <header class="header-cont">
-                <h1>Preguntas Frecuentes</h1>
-                <span>Conócenos más a fondo </span>
-                <p>Queremos entregarles a nuestros clientes la mayor transparencia posible, por eso te dejamos invitado
-                    a conocer más acerca de nosotros.</p>
-        </header>
-
-        <div class="acordeon-contenedor">
-
-            <!-- GARANTÍAS -->
-
-            <div class="acordeon-h2">
+            <div className="acordeon-contenedor">
+            {/* GARANTÍAS */}
+            <div className="acordeon-h2">
                 <h2>Garantías</h2>
             </div>
 
-            <!--DETAILS -->
-
-            <div class="acordeon-grid">
-
-                <!--Detail 01 -->
-
+            <div className="acordeon-grid">
                 <details>
-                    <summary>
-                            Plazos  
-                            <i class="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
-                            <i class="fa-solid fa-minus fa-lg" id="arrow-2"></i>
-                    </summary>
-                    <div class="details-content">
-                        <p>Cada cliente contará con un total de <span>15 días máximos</span> posteriores a la compra de su perfume para que pueda hacer efectivo el cambio o devolución.</p>
-                    </div>
+                <summary>
+                    Plazos
+                    <i className="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
+                    <i className="fa-solid fa-minus fa-lg" id="arrow-2"></i>
+                </summary>
+                <div className="details-content">
+                    <p>
+                    Cada cliente contará con un total de <span>15 días máximos</span>{" "}
+                    posteriores a la compra de su perfume para que pueda hacer
+                    efectivo el cambio o devolución.
+                    </p>
+                </div>
                 </details>
 
-                <!--Detail 02 -->
-
                 <details>
-                    <summary>
-                            Posibilidad de cambio o devolución
-                            <i class="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
-                            <i class="fa-solid fa-minus fa-lg" id="arrow-2"></i>
-                    </summary>
-                    <div class="details-content">
-                        <p>Nuestros productos podrán ser cambiados o devueltos sin problema algunos siempre y cuando no se hayan cumplido ninguna de las <span>siguientes causales:</span></p>
-                        <p>1. El tiempo máximo para aplicar su garantía (15 días) haya sido sobrepasado.</p>
-                        <p>2. La caja o envoltura del perfume fue devuelta en mal estado.</p>
-                        <p>3. El cliente atomizó el perfume.</p>
-                        <p><span>* El único caso en el que procederemos con el cambio o devolución a pesar de que el cliente haya atomizado el perfume será cuando de forma clara se pueda apreciar que el atomizador de este venía defectuoso.</span></p>
-                        <span></span>
-                        <span></span>
-                    </div>
+                <summary>
+                    Posibilidad de cambio o devolución
+                    <i className="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
+                    <i className="fa-solid fa-minus fa-lg" id="arrow-2"></i>
+                </summary>
+                <div className="details-content">
+                    <p>
+                    Nuestros productos podrán ser cambiados o devueltos sin
+                    problema alguno siempre y cuando no se haya cumplido ninguna de
+                    las <span>siguientes causales:</span>
+                    </p>
+                    <p>
+                    1. El tiempo máximo para aplicar su garantía (15 días) haya sido
+                    sobrepasado.
+                    </p>
+                    <p>2. La caja o envoltura del perfume fue devuelta en mal estado.</p>
+                    <p>3. El cliente atomizó el perfume.</p>
+                    <p>
+                    <span>
+                        * El único caso en el que procederemos con el cambio o
+                        devolución a pesar de que el cliente haya atomizado el perfume
+                        será cuando de forma clara se pueda apreciar que el atomizador
+                        venía defectuoso.
+                    </span>
+                    </p>
+                </div>
                 </details>
             </div>
 
-            <!-- MÉTODOS DE PAGO -->
-
-            <div class="acordeon-h2">
+            {/* MÉTODOS DE PAGO */}
+            <div className="acordeon-h2">
                 <h2>Métodos de pago</h2>
             </div>
 
-            <!--DETAIL 01 -->
+            <details>
+                <summary>
+                Formas
+                <i className="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
+                <i className="fa-solid fa-minus fa-lg" id="arrow-2"></i>
+                </summary>
+                <div className="details-content">
+                <p>
+                    Contamos con <span>3 tipos</span> de métodos de pago:
+                </p>
+                <div>- Tarjetas de débito o crédito.</div>
+                <div>- Transferencias.</div>
+                <div>- Efectivo.</div>
+                </div>
+            </details>
 
-                <details>
-                    <summary>
-                            Formas
-                            <i class="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
-                            <i class="fa-solid fa-minus fa-lg" id="arrow-2"></i>
-                    </summary>
-                    <div class="details-content">
-                        <p>Contamos con <span>3 tipos</span> de métodos de pago:</p>
-                        <div>- Tarjetas de débito o crédito.</div>
-                        <div>- Transferencias.</div>
-                        <div>- Efectivo.</div>
-                    </div>
-                </details>
-
-            <!-- NUESTRA HISTORIA -->
-
-            <div class="acordeon-h2">
+            {/* NUESTRA HISTORIA */}
+            <div className="acordeon-h2">
                 <h2>Sobre nosotros</h2>
             </div>
 
-            <!--DETAIL 01 -->
-
-            <div class="acordeon-grid">
-
+            <div className="acordeon-grid">
                 <details>
-                    <summary>
-                            Fundación
-                            <i class="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
-                            <i class="fa-solid fa-minus fa-lg" id="arrow-2"></i>
-                    </summary>
-                    <div class="details-content">
-                        <p>Nuestra empresa fue fundada en el año <span>1980.</span> Todo comenzó por una pasión por la perfumería, creando nuestros propios aromas con las limitadas esencias que teníamos en ese momento.</p>
-                        <p>Al poco tiempo nos planteamos la idea de comenzar a regalar algunas de estas creaciones para saber si a la gente le gustaba y al darnos cuenta que realmente fue así nos planteamos organizar un negocio pequeño de ventas de nuestros perfumes.</p>
-                        <p> Así fue como comenzó la historia de <span>Nicaxel.</span> A partir de una idea que surgió por diversión nos transformamos en la empresa con <span>mayor prestigio </span>dentro del país.</p>
-                        <p>Más de <span>40 años</span> entregando <span>productos de calidad</span> a nuestros clientes.</p>
+                <summary>
+                    Fundación
+                    <i className="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
+                    <i className="fa-solid fa-minus fa-lg" id="arrow-2"></i>
+                </summary>
+                <div className="details-content">
+                    <p>
+                    Nuestra empresa fue fundada en el año <span>1980</span>. Todo
+                    comenzó por una pasión por la perfumería, creando nuestros
+                    propios aromas con las limitadas esencias que teníamos en ese
+                    momento.
+                    </p>
+                    <p>
+                    Al poco tiempo nos planteamos la idea de comenzar a regalar
+                    algunas de estas creaciones para saber si a la gente le gustaba
+                    y al darnos cuenta que realmente fue así nos planteamos
+                    organizar un negocio pequeño de ventas de nuestros perfumes.
+                    </p>
+                    <p>
+                    Así fue como comenzó la historia de <span>Nicaxel</span>. A
+                    partir de una idea que surgió por diversión nos transformamos en
+                    la empresa con <span>mayor prestigio</span> dentro del país.
+                    </p>
+                    <p>
+                    Más de <span>40 años</span> entregando{" "}
+                    <span>productos de calidad</span> a nuestros clientes.
+                    </p>
+                </div>
                 </details>
 
-                <!--DETAIL 02 -->
-
                 <details>
-                    <summary>
-                            Dónde estamos ubicados
-                            <i class="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
-                            <i class="fa-solid fa-minus fa-lg" id="arrow-2"></i>
-                    </summary>
-                    <div class="details-content">
-                        <p>Podrás encontrarnos en <span>Av. Martínez 287, Providencia.</span></p>
-                        <p>Santiago. Región Metropolitana</p>
-                    </div>
+                <summary>
+                    Dónde estamos ubicados
+                    <i className="fa-solid fa-play fa-rotate-90 fa-xs arrow-1"></i>
+                    <i className="fa-solid fa-minus fa-lg" id="arrow-2"></i>
+                </summary>
+                <div className="details-content">
+                    <p>
+                    Podrás encontrarnos en <span>Av. Martínez 287, Providencia.</span>
+                    </p>
+                    <p>Santiago. Región Metropolitana</p>
+                </div>
                 </details>
             </div>
-    </main>
-    <!-- FOOTER -->
-
-        <footer>
-
-            <div class="seccion-footer">
-                <h3>Horario de atención</h3>
-                <div class="footer-links">
-                    <span>Lunes a Viernes: 09:00 - 20:30</span>
-                    <span>Sábados, Domingos y Festivos: 11:00 - 16:30</span>
-                </div>
             </div>
+        </main>
+        </>
+    );
+}
 
-            <div class="seccion-footer">
-                <h3>Catálogo</h3>
-                <div class="footer-links">
-                    <span>Perfumes Árabes</span>
-                    <span>Rasasi</span>
-                    <span>Carolina Herrera</span>
-                    <span>Paco Rabanne</span>
-                    <span>Y más...!</span>
-                </div>
-            </div>
-
-            <div class="seccion-footer">
-                <h3>Sobre nosotros</h3>
-                <div class="footer-links">
-                    <a href="nosotros.html">Garantías</a>
-                    <a href="nosotros.html">Métodos de pago</a>
-                    <a href="nosotros.html">Fundación</a>
-                </div>
-            </div>
-
-        </footer>
-        <p class="licencia">&copy Diseñado y desarrollado por Axel Soto y Nicolás Carvajal.</p>
-<script src="./js/burger.js"></script>
-</body>
-</html>
+export default Nosotros;

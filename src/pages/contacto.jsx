@@ -1,164 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewporT" content="width=device-width, initial-scale=1.0">
-    <title>Nicaxel | Contacto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Styles/main.css">
-    <link rel="stylesheet" href="Styles/contacto.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-    <script src="https://kit.fontawesome.com/1a2d8e6216.js" crossorigin="anonymous"></script>
+const Contact = () => {
 
-    <link rel="icon" href="/Img/perfume.jpg">
-</head>
-<body>
-    <div class="sticky">
+    const [nombre, setNombre] = useState("");
+    const [correo, setCorreo] = useState("");
+    const [mensaje, setMensaje] = useState("");
+    const [errorNombre, setErrorNombre] = useState("");
+    const [errorCorreo, setErrorCorreo] = useState("");
+    const [errorMensaje, setErrorMensaje] = useState("");
+    const [contador, setContador] = useState(200);
 
-        <!-- Banner -->
-        <div class="banner-div">
-            <span class="banner">Aprovecha solo por esta semana hasta un <span>60%</span> en productos seleccionados. <a href="catalogo.html" class="pincha">Pincha aquí para más info.</a> <i class="fa-solid fa-hand-pointer fa-xs" style="color: #ffffff;"></i></span>
-        </div>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let valido = true;
 
-        <!-- Navbar Mobile -->
-        <nav class="navbar-mobile">
-            <!-- Título -->
-            <a href="index.html" class="tittle">NICAXEL</a>
+        if (nombre.trim().split(" ").length < 2) {
+        setErrorNombre("Debes ingresar tu nombre y al menos un apellido.");
+        valido = false;
+        } else {
+        setErrorNombre("");
+        }
 
-            <!-- Links -->
-            <ul class="nav-menu">
+        if (!correo.includes("@")) {
+        setErrorCorreo("Ingresa un correo válido.");
+        valido = false;
+        } else {
+        setErrorCorreo("");
+        }
 
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
+        if (mensaje.trim().length === 0) {
+        setErrorMensaje("El mensaje no puede estar vacío.");
+        valido = false;
+        } else {
+        setErrorMensaje("");
+        }
 
-                <li class="nav-item">
-                    <a href="nosotros.html" class="nav-link">Sobre nosotros</a>
-                </li>
+        if (valido) {
+        alert("Formulario enviado con éxito 🎉");
+        setNombre("");
+        setCorreo("");
+        setMensaje("");
+        setContador(200);
+        }
+    };
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
-                </li>
+    const handleMensajeChange = (e) => {
+        const texto = e.target.value;
+        setMensaje(texto);
+        setContador(200 - texto.length);
+    };
 
-                <li class="nav-item">
-                    <a href="catalogo.html" class="nav-link">Catálogo</a>
-                </li>
+    return (
+        <>
+        <main className="form-main">
+            <h1 className="form-h1">Contáctanos</h1>
 
-                <li class="nav-item">
-                    <div class="login-flex">
-                        <a href="login.html" class="nav-link">Iniciar sesión</a>
-                        <img src="./Img/login.svg" alt="">
-                    </div>
-                </li>
+            <section className="formulario-div">
+            <h2 className="form-h2">Información requerida</h2>
 
+            <form onSubmit={handleSubmit} id="miFormulario">
+                {/* Nombre */}
+                <label htmlFor="nombre">Nombre y apellido/s*</label>
+                <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ingresa tu nombre y al menos 1 apellido"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+                />
+                {errorNombre && (
+                <span style={{ color: "rgb(179, 56, 56)" }}>{errorNombre}</span>
+                )}
 
+                {/* Correo electrónico */}
+                <label htmlFor="correo">Correo electrónico*</label>
+                <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="ejemplo@gmail.com"
+                value={correo}
+                onChange={(e) => setCorreo(e.target.value)}
+                />
+                {errorCorreo && (
+                <span style={{ color: "rgb(179, 56, 56)" }}>{errorCorreo}</span>
+                )}
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Ver carrito 🛒(2)</a>
-                </li>
-            </ul>
+                {/* Mensaje */}
+                <label htmlFor="mensaje">Mensaje (máx 200 caracteres):</label>
+                <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Déjanos tu mensaje aquí..."
+                maxLength="200"
+                rows="5"
+                cols="30"
+                value={mensaje}
+                onChange={handleMensajeChange}
+                ></textarea>
+                {errorMensaje && (
+                <span style={{ color: "rgb(179, 56, 56)" }}>{errorMensaje}</span>
+                )}
+                <p id="contador">{contador} caracteres restantes</p>
 
-            <!-- Burger -->
-            <div class="burger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-        <!-- ------------------------------------------- -->
-
-        <!-- Navbar Dekstop -->
-        <nav class="navbar-dekstop">
-            <!-- Título -->
-            <a href="index.html" class="tittle">NICAXEL</a>
-
-            <!-- Navbar medio -->
-                <div class="nav-medio">
-                            <a href="nosotros.html">Sobre nosotros</a>
-                            <a href="#">Blog</a>
-                            <span>Contacto</span>
-                </div>
-            
-            <!-- Navbar derecha -->
-            <div class="nav-derecha">
-                <a href="login.html"><img src="./Img/login.svg" alt="Icono de login"></a>
-                <div class="carrito-flex">
-                    <a href="carrito.html"><img src="./Img/carrito.svg" alt="Icono de carrito"></a>
-                    <span>(1)</span>
-                </div>
-            </div>
-        </nav>
-        <!-- ------------------------------------------- -->
-    </div> 
-    
-        <main>
-            <h1>Contáctanos</h1>
-
-            <section class="formulario-div">
-                <!-- Título del formulario -->
-                <h2>Información requerida</h2>
-
-                <!-- Contenido formulario -->
-                <form onsubmit="return validarNombre();" id="miFormulario">
-
-                        <!-- Nombre -->
-                        <label for="nombre">Nombre y apellido/s*</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre y al menos 1 apellido">
-                        <span id="error-nombre" style="color: rgb(179, 56, 56);"></span>
-
-                        <!-- Correo electrónico -->
-                        <label for="">Correo electrónico*</label>
-                        <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
-                        <span id="error-correo" style="color: rgb(179, 56, 56);"></span>
-
-                        <!-- Mensaje -->
-                        <label for="mensaje">Mensaje (máx 200 caracteres):</label>
-                        <textarea id="mensaje" name="mensaje" placeholder="Déjanos tu mensaje aquí..." maxlength="200" oninput="actualizarContador()" rows="5" cols="30" required></textarea>
-                        <span id="error-mensaje" style="color: rgb(179, 56, 56);"></span>
-                        <p id="contador">200 caracteres restantes</p>
-
-                        <!-- ENVIAR -->
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
+                {/* Enviar */}
+                <button type="submit">Enviar</button>
+            </form>
             </section>
         </main>
-        <!-- FOOTER -->
+        </>
+    );
+};
 
-        <footer>
-
-            <div class="seccion-footer">
-                <h3>Horario de atención</h3>
-                <div class="footer-links">
-                    <span>Lunes a Viernes: 09:00 - 20:30</span>
-                    <span>Sábados, Domingos y Festivos: 11:00 - 16:30</span>
-                </div>
-            </div>
-
-            <div class="seccion-footer">
-                <h3>Catálogo</h3>
-                <div class="footer-links">
-                    <span>Perfumes Árabes</span>
-                    <span>Rasasi</span>
-                    <span>Carolina Herrera</span>
-                    <span>Paco Rabanne</span>
-                    <span>Y más...!</span>
-                </div>
-            </div>
-
-            <div class="seccion-footer">
-                <h3>Sobre nosotros</h3>
-                <div class="footer-links">
-                    <a href="nosotros.html">Garantías</a>
-                    <a href="nosotros.html">Métodos de pago</a>
-                    <a href="nosotros.html">Fundación</a>
-                </div>
-            </div>
-
-        </footer>
-        <p class="licencia">&copy Diseñado y desarrollado por Axel Soto y Nicolás Carvajal.</p>
-<script src="./js/contacto.js"></script>
-<script src="./js/burger.js"></script>
-</body>
+export default Contact;

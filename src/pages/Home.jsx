@@ -1,104 +1,13 @@
 import React from "react";
-import "../styles/main.css";
+import { Link, NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
     <div>
-      {/* Banner */}
-      <div className="banner-div">
-        <span className="banner">
-          Aprovecha solo por esta semana hasta un <span>60%</span> en productos
-          seleccionados.{" "}
-          <a href="catalogo.html" className="pincha">
-            Pincha aquí para más info.
-          </a>{" "}
-        </span>
-      </div>
 
-      {/* Navbar Mobile */}
-      <nav className="navbar-mobile">
-        {/* Título */}
-        <a href="index.html" className="tittle">
-          NICAXEL
-        </a>
-
-        {/* Links */}
-        <ul className="nav-menu">
-          <li className="nav-item">
-            <a href="nosotros.html" className="nav-link">
-              Sobre nosotros
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              Blog
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="catalogo.html" className="nav-link">
-              Catálogo
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="contacto.html" className="nav-link">
-              Contacto
-            </a>
-          </li>
-          <li className="nav-item">
-            <div className="login-flex">
-              <a href="login.html" className="nav-link">
-                Iniciar sesión
-              </a>
-              <img src="./Img/login.svg" alt="Login icon" />
-            </div>
-          </li>
-          <li className="nav-item">
-            <a href="carrito.html" className="nav-link">
-              Ver carrito 🛒(2)
-            </a>
-          </li>
-        </ul>
-
-        {/* Burger */}
-        <div className="burger">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
-      </nav>
-
-      {/* Navbar Desktop */}
-      <nav className="navbar-dekstop">
-        <a href="index.html" className="tittle">
-          NICAXEL
-        </a>
-
-        <div className="nav-medio">
-          <a href="nosotros.html">Sobre nosotros</a>
-          <a href="#">Blog</a>
-          <a href="contacto.html" className="navbar-contacto">
-            Contacto
-          </a>
-        </div>
-
-        <div className="nav-derecha">
-          <a href="login.html">
-            <img src="./Img/login.svg" alt="Icono de login" />
-          </a>
-          <div className="carrito-flex">
-            <a href="carrito.html">
-              <img src="./Img/carrito.svg" alt="Icono de carrito" />
-            </a>
-            <span>(1)</span>
-          </div>
-        </div>
-      </nav>
-
-      {/* MAIN */}
       <main>
-        {/* HEADER */}
         <header>
-          <img src="Img/perfume02.jpg" alt="" className="header-img-01" />
+          <img src="/Img/perfume02.jpg" alt="" className="header-img-01" />
           <div className="header-contenido">
             <h1>Fragancias de clase mundial</h1>
             <p>Ven y conoce cada una de nuestras líneas.</p>
@@ -106,11 +15,11 @@ const Home = () => {
               Elegida la casa perfumera más elegante del continente por{" "}
               <strong>5 años </strong> consecutivos.
             </p>
-            <a href="catalogo.html" className="header-button">
+            <Link to="/catalogo" className="header-button">
               Ver catálogo →
-            </a>
+            </Link>
           </div>
-          <img src="Img/perfume.jpg" alt="" className="header-img-02" />
+          <img src="/Img/perfume.jpg" alt="" className="header-img-02" />
         </header>
 
         {/* BANNER LANZAMIENTO */}
@@ -143,14 +52,14 @@ const Home = () => {
         <section>
           <article className="mas-vendidos">
             <h3>🌟Los más vendidos</h3>
-            <a href="catalogo.html">Ver catálogo completo</a>
+            <Link to="/catalogo">Ver catálogo completo</Link>
           </article>
 
           <article className="perfumes-carrusel">
             {/* PERFUME 01 */}
             <div className="perfume">
               <div className="perfume-card">
-                <img src="./Img/Yara-Lattafa.jpeg" alt="Perfume Yara Lattafa" />
+                <img src="/Img/Yara-Lattafa.jpeg" alt="Perfume Yara Lattafa" />
                 <div className="perfume-card-contenido">
                   <div className="descripcion-div">
                     <span className="marca">Lattafa</span>
@@ -175,7 +84,7 @@ const Home = () => {
             <div className="perfume">
               <div className="perfume-card">
                 <img
-                  src="./Img/Versace-Eros-Flame.jpeg"
+                  src="/Img/Versace-Eros-Flame.jpeg"
                   alt="Perfume Versace Eros Flame"
                 />
                 <div className="perfume-card-contenido">
@@ -198,72 +107,133 @@ const Home = () => {
               </div>
             </div>
 
-              {/* PERFUME 02 */}
+                {/* PERFUME 03 */}
             <div className="perfume">
               <div className="perfume-card">
                 <img
-                  src="./Img/Versace-Eros-Flame.jpeg"
+                  src="/Img/Kit-DG.jpeg"
                   alt="Perfume Versace Eros Flame"
                 />
                 <div className="perfume-card-contenido">
                   <div className="descripcion-div">
-                    <span className="marca">Lattafa</span>
+                    <span className="marca">Dolge & Gabbana</span>
                     <span className="descripcion">
-                      Versace Versace Eros Flame Men EDP 100 ML (H)
+                      Dolce & Gabbana K Pour Homme EDT Set (H)
                     </span>
                   </div>
                   <div className="rating">
                     <span>⭐⭐⭐⭐⭐</span>
-                    <span>(36)</span>
+                    <span>(46)</span>
                   </div>
                   <div className="precio">
-                    <span>$59.990</span>
-                    <span>$89.990</span>
+                    <span>$62.990</span>
+                    <span>$78.990</span>
                   </div>
                 </div>
                 <button className="addCarrito">Añadir al carrito</button>
               </div>
             </div>
 
-              {/* PERFUME 02 */}
+              {/* PERFUME 04 */}
             <div className="perfume">
               <div className="perfume-card">
                 <img
-                  src="./Img/Versace-Eros-Flame.jpeg"
+                  src="/Img/Nitro-Red.jpeg"
                   alt="Perfume Versace Eros Flame"
                 />
                 <div className="perfume-card-contenido">
                   <div className="descripcion-div">
-                    <span className="marca">Lattafa</span>
+                    <span className="marca">Elite Perfumes</span>
                     <span className="descripcion">
-                      Versace Versace Eros Flame Men EDP 100 ML (H)
+                      Dumont Nitro Red Pour Homme EDP 100 ML (H)
                     </span>
                   </div>
                   <div className="rating">
-                    <span>⭐⭐⭐⭐⭐</span>
-                    <span>(36)</span>
+                    <span>⭐⭐⭐⭐</span>
+                    <span>(49)</span>
                   </div>
                   <div className="precio">
-                    <span>$59.990</span>
-                    <span>$89.990</span>
+                    <span>$21.690</span>
+                    <span>$39.990</span>
                   </div>
                 </div>
                 <button className="addCarrito">Añadir al carrito</button>
               </div>
             </div>
 
-              {/* PERFUME 02 */}
+              {/* PERFUME 05 */}
             <div className="perfume">
               <div className="perfume-card">
                 <img
-                  src="./Img/Versace-Eros-Flame.jpeg"
+                  src="/Img/Eclaire-Lattafa.jpeg"
                   alt="Perfume Versace Eros Flame"
                 />
                 <div className="perfume-card-contenido">
                   <div className="descripcion-div">
                     <span className="marca">Lattafa</span>
                     <span className="descripcion">
-                      Versace Versace Eros Flame Men EDP 100 ML (H)
+                      Lattafa Lattafa Eclaire EDP 100 ML (M)
+                    </span>
+                  </div>
+                  <div className="rating">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <span>(20)</span>
+                  </div>
+                  <div className="precio">
+                    <span>$33.240</span>
+                    <span>$62.370</span>
+                  </div>
+                </div>
+                <button className="addCarrito">Añadir al carrito</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+         {/* RECIÉN LLEGADOS */}
+        <section>
+          <article className="mas-vendidos">
+            <h3>🌟Los más vendidos</h3>
+            <Link to="/catalogo">Ver catálogo completo</Link>
+          </article>
+
+          <article className="perfumes-carrusel">
+            {/* PERFUME 01 */}
+            <div className="perfume">
+              <div className="perfume-card">
+                <img src="/Img/Pride-Lattafa.jpeg" alt="Perfume Yara Lattafa" />
+                <div className="perfume-card-contenido">
+                  <div className="descripcion-div">
+                    <span className="marca">Lattafa</span>
+                    <span className="descripcion">
+                      Lattafa Pride Art Of Universe EDP 100 ML (H)
+                    </span>
+                  </div>
+                  <div className="rating">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <span>(15)</span>
+                  </div>
+                  <div className="precio">
+                    <span>$23.740</span>
+                    <span>$59.990</span>
+                  </div>
+                </div>
+                <button className="addCarrito">Añadir al carrito</button>
+              </div>
+            </div>
+
+            {/* PERFUME 02 */}
+            <div className="perfume">
+              <div className="perfume-card">
+                <img
+                  src="/Img/Hawas.jpeg"
+                  alt="Perfume Versace Eros Flame"
+                />
+                <div className="perfume-card-contenido">
+                  <div className="descripcion-div">
+                    <span className="marca">Rasasi</span>
+                    <span className="descripcion">
+                      Rasasi Rasasi Hawas Ice For Him EDP 100 ML (H)
                     </span>
                   </div>
                   <div className="rating">
@@ -271,8 +241,89 @@ const Home = () => {
                     <span>(36)</span>
                   </div>
                   <div className="precio">
-                    <span>$59.990</span>
-                    <span>$89.990</span>
+                    <span>$44.990</span>
+                    <span>$69.990</span>
+                  </div>
+                </div>
+                <button className="addCarrito">Añadir al carrito</button>
+              </div>
+            </div>
+
+              {/* PERFUME 03 */}
+            <div className="perfume">
+              <div className="perfume-card">
+                <img
+                  src="/Img/Paris-Corner.jpeg"
+                  alt="Perfume Versace Eros Flame"
+                />
+                <div className="perfume-card-contenido">
+                  <div className="descripcion-div">
+                    <span className="marca">Paris Corner</span>
+                    <span className="descripcion">
+                      Paris corner Prodigy EDP 100 ML (Hombre & Mujer)
+                    </span>
+                  </div>
+                  <div className="rating">
+                    <span>⭐⭐⭐⭐</span>
+                    <span>(49)</span>
+                  </div>
+                  <div className="precio">
+                    <span>$21.690</span>
+                    <span>$39.990</span>
+                  </div>
+                </div>
+                <button className="addCarrito">Añadir al carrito</button>
+              </div>
+            </div>
+
+              {/* PERFUME 04 */}
+            <div className="perfume">
+              <div className="perfume-card">
+                <img
+                  src="/Img/AcquaDiGio.jpeg"
+                  alt="Perfume Versace Eros Flame"
+                />
+                <div className="perfume-card-contenido">
+                  <div className="descripcion-div">
+                    <span className="marca">Giorgo Arman</span>
+                    <span className="descripcion">
+                      Acqua Di Gio Parfum Recargable 75 ML Tester (H)
+                    </span>
+                  </div>
+                  <div className="rating">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <span>(6)</span>
+                  </div>
+                  <div className="precio">
+                    <span>$75.040</span>
+                    <span>$106.637</span>
+                  </div>
+                </div>
+                <button className="addCarrito">Añadir al carrito</button>
+              </div>
+            </div>
+
+              {/* PERFUME 05 */}
+            <div className="perfume">
+              <div className="perfume-card">
+                <img
+                  src="/Img/Eclaire-Lattafa.jpeg"
+                  alt="Perfume Versace Eros Flame"
+                />
+                <div className="perfume-card-contenido">
+                  <div className="descripcion-div">
+                    <span className="marca">Lattafa</span>
+                    <span className="descripcion">
+                      Lattafa Lattafa Eclaire EDP 100 ML (M)
+                    </span>
+                  </div>
+                  <div className="rating">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <span>(20)</span>
+                  </div>
+                  <div className="precio">
+                    <span>$33.240</span>
+                    <span>$62.370</span>
                   </div>
                 </div>
                 <button className="addCarrito">Añadir al carrito</button>
