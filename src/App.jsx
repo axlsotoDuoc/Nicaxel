@@ -8,13 +8,13 @@ import Login from './pages/Login';
 import Nosotros from './pages/Nosotros';
 import Register from './pages/Register';
 
-import Banner from './components/Banner'
+import BannerNavbar from './components/BannerNavbar'
 import Footer from './components/Footer'
 
 function App() {
 return (
         <Router>
-        <Banner />
+        <BannerNavbar />
 
         <Routes>
             <Route path="/" element={<Home />} />

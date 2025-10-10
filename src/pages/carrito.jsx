@@ -1,97 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/carrito.css";
 
 const Carrito = () => {
     return (
         <>
-        <div className="sticky">
-
-            {/* Navbar Mobile */}
-            <nav className="navbar-mobile">
-            {/* Título */}
-            <Link to="/" className="tittle">
-                NICAXEL
-            </Link>
-
-            {/* Links */}
-            <ul className="nav-menu">
-                <li className="nav-item">
-                <Link to="/nosotros" className="nav-link">
-                    Sobre nosotros
-                </Link>
-                </li>
-
-                <li className="nav-item">
-                <Link to="/" className="nav-link">
-                    Blog
-                </Link>
-                </li>
-
-                <li className="nav-item">
-                <Link to="/catalogo" className="nav-link">
-                    Catálogo
-                </Link>
-                </li>
-
-                <li className="nav-item">
-                <Link to="/contacto" className="nav-link">
-                    Contacto
-                </Link>
-                </li>
-
-                <li className="nav-item">
-                <Link to="/register" className="nav-link">
-                    Registrarse
-                </Link>
-                </li>
-
-                <li className="nav-item">
-                <div className="login-flex">
-                    <Link to="/login" className="nav-link">
-                    Iniciar sesión
-                    </Link>
-                    <img src="/Img/login.svg" alt="icono login" />
-                </div>
-                </li>
-            </ul>
-
-            {/* Burger */}
-            <div className="burger">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </div>
-            </nav>
-
-            {/* Navbar Desktop */}
-            <nav className="navbar-dekstop">
-            <Link to="/" className="tittle">
-                NICAXEL
-            </Link>
-
-            <div className="nav-medio">
-                <Link to="/nosotros">Sobre nosotros</Link>
-                <Link to="/">Blog</Link>
-                <Link to="/contacto" className="navbar-contacto">
-                Contacto
-                </Link>
-            </div>
-
-            <div className="nav-derecha">
-                <Link to="/login">
-                <img src="/Img/login.svg" alt="ícono de login" />
-                </Link>
-            </div>
-            </nav>
-        </div>
-
-        {/* Contenido principal */}
         <main>
+            <h1>Bienvenido a tu carrito</h1>
+            
             <section className="resumen">
             <article className="resumen-tittle-flex">
                 <h3>Resumen del pedido</h3>
-                <span>$59.990</span>
+                <h3>Items </h3>
             </article>
             </section>
 
@@ -139,7 +58,6 @@ const Carrito = () => {
             </Link>
             </div>
         </main>
-
         </>
     );
 };
