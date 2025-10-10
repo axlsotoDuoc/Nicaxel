@@ -54,12 +54,12 @@ const Login = () => {
 
     return (
         <>
-        <main>
-            <h1>Regístrate o inicia sesión</h1>
+        <main className="form-main">
+            <h1 className="form-h1">Regístrate o inicia sesión</h1>
 
             <section className="formulario-div">
             <div className="titulo-form">
-                <h2>Selecciona tipo de login</h2>
+                <h2 className="login-h2">Selecciona tipo de login</h2>
                 <div className="admin-usuario-flex">
                 <div className="remember-me">
                     <input

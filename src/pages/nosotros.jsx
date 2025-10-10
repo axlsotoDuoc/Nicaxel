@@ -7,7 +7,7 @@ function Nosotros() {
     return (
         <>
         <main className="main-faq">
-            <header className="header-cont">
+            <header className="header-cont nosotros-header">
             <h1>Preguntas Frecuentes</h1>
             <span>Conócenos más a fondo </span>
             <p>

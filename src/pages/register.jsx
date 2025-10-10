@@ -41,11 +41,11 @@ function Register() {
 
     return (
         <>
-        <main>
-            <h1>Regístrate o inicia sesión</h1>
+        <main className="form-main">
+            <h1 className="form-h1">Regístrate o inicia sesión</h1>
 
             <section className="formulario-div">
-            <h2>Información requerida</h2>
+            <h2 className="form-h2">Información requerida</h2>
 
             <form id="formRegistro" onSubmit={validarRegistro}>
                 <label htmlFor="correo">Correo electrónico*</label>
@@ -56,7 +56,6 @@ function Register() {
                 placeholder="ejemplo@gmail.com"
                 value={correo}
                 onChange={(e) => setCorreo(e.target.value)}
-                required
                 />
                 <span style={{ color: "rgb(179, 56, 56)" }}>{errores.correo}</span>
 
@@ -68,7 +67,6 @@ function Register() {
                 placeholder="Ingresa tu nueva contraseña"
                 value={password1}
                 onChange={(e) => setPassword1(e.target.value)}
-                required
                 />
                 <span style={{ color: "rgb(179, 56, 56)" }}>{errores.password}</span>
 
@@ -80,7 +78,6 @@ function Register() {
                 placeholder="Repite la contraseña"
                 value={password2}
                 onChange={(e) => setPassword2(e.target.value)}
-                required
                 />
                 <span style={{ color: "rgb(179, 56, 56)" }}>{errores.repeat}</span>
 

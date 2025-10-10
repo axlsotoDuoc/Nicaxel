@@ -53,11 +53,11 @@ const Contact = () => {
 
     return (
         <>
-        <main>
-            <h1>Contáctanos</h1>
+        <main className="form-main">
+            <h1 className="form-h1">Contáctanos</h1>
 
             <section className="formulario-div">
-            <h2>Información requerida</h2>
+            <h2 className="form-h2">Información requerida</h2>
 
             <form onSubmit={handleSubmit} id="miFormulario">
                 {/* Nombre */}

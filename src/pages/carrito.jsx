@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Carrito = () => {
     return (
         <>
-        <main>
+        <main className="carrito-main">
             <h1>Bienvenido a tu carrito</h1>
             
             <section className="resumen">

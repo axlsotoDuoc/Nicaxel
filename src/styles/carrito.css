@@ -1,5 +1,5 @@
-main {
-    background: gray;
+.carrito-main {
+    background: rgb(248, 248, 248);
 }
 
 .resumen-tittle-flex {
@@ -116,9 +116,9 @@ main {
 }
 
 @media screen and (width > 700px) {
-    main{
+    .carrito-main{
         max-width: 60rem;
-        margin: 10rem auto;
+        margin: 5rem auto 0;
         padding: 5rem;
     }
 }

@@ -4,7 +4,7 @@
 
 
 /* HEADER */
-header {
+.nosotros-header {
     display: grid;
     text-align: center;
     max-width: 70rem;
@@ -15,10 +15,10 @@ header {
     background: var(--White);
 }
 
-header h1 {
-    text-align: center;
+.nosotros-header h1 {
     font-weight: bolder;
     font-size: 4rem;
+    margin-top: 1rem;
 }
     
 .header-cont span {

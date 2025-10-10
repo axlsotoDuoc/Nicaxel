@@ -28,7 +28,6 @@ return (
             <Route path="*" element={<h1>Página no encontrada</h1>} />
         </Routes>
         <Footer />
-        
         </Router>
 );
 }
