@@ -1,0 +1,126 @@
+.carrito-main {
+    background: rgb(248, 248, 248);
+}
+
+.resumen-tittle-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.resumen-tittle-flex h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.resumen-tittle-flex span {
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.detalle-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.detalle-flex img {
+    width: 7rem;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: .8rem;
+}
+
+.perfume-nombre, .perfume-precio {
+    font-size: 1.5rem;
+}
+
+.codigo-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.codigo-flex input {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 25rem;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.codigo-flex input::placeholder {
+    color: rgb(194, 194, 194);
+}
+
+.codigo-flex input:focus {
+    border: 1px solid rgb(48, 48, 48);
+}
+
+.aplicar, .pagar {
+    cursor: pointer;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border-radius: 1rem;
+    background: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.aplicar:hover, .pagar:hover {
+    background: rgb(41, 41, 41);
+}
+
+.subtotal, .total {
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+.subtotal-flex, .total-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subtotal-flex:last-of-type{
+    margin-top: 2rem;
+}
+
+.total-precio-flex {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.total-flex h3 {
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.total-precio-flex span:first-of-type {
+    font-size: 1rem;
+}
+
+.total-precio-flex span:last-of-type{
+    font-size: 1.9rem;
+    font-weight: bolder;
+}
+
+.pagar-button-div {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+@media screen and (width > 700px) {
+    .carrito-main{
+        max-width: 60rem;
+        margin: 5rem auto 0;
+        padding: 5rem;
+    }
+}
+
+
