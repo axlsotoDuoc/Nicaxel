@@ -193,11 +193,11 @@ const Home = () => {
          {/* RECIÉN LLEGADOS */}
         <section>
           <article className="mas-vendidos">
-            <h3>🌟Los más vendidos</h3>
+            <h3>🌟Recién llegados</h3>
             <Link to="/catalogo">Ver catálogo completo</Link>
           </article>
 
-          <article className="perfumes-carrusel">
+          <article className="perfumes">
             {/* PERFUME 01 */}
             <div className="perfume">
               <div className="perfume-card">

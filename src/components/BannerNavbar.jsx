@@ -69,7 +69,6 @@ const Banner = () => {
                     
                             <div className="nav-medio">
                                 <Link to="/nosotros">Sobre nosotros</Link>
-                                <Link to="/blog">Blog</Link>
                                 <Link to="/contacto" className="navbar-contacto">Contacto</Link>
                             </div>
                     

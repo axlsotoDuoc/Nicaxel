@@ -6,7 +6,6 @@ import "./styles/catalogo.css";
 import "./styles/contacto.css"; 
 import "./styles/login.css"; 
 import "./styles/nosotros.css"; 
-import "./styles/register.css"; 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
