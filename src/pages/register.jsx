@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-function Register() {
+export default function Register() {
+
+    const navigate = useNavigate();
     
     const [correo, setCorreo] = useState("");
     const [password1, setPassword1] = useState("");
@@ -35,7 +37,8 @@ function Register() {
         setErrores(nuevosErrores);
 
         if (valido) {
-        alert("Registro exitoso ✅");
+        alert("Registro exitoso ✅. Serás redirigido a la página de inicio de sesión.");
+        navigate("/login");
         }
     };
 
@@ -101,5 +104,3 @@ function Register() {
         </>
     );
 }
-
-export default Register;

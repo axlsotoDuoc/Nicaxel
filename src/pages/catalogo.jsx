@@ -1,9 +1,10 @@
 import React from "react";
-import { useState } from 'react'; // Agregar useState
+import { useState } from 'react'; 
+import Button from 'react-bootstrap/Button';
 
 const listaPerfumes = [
     {
-        imagen: "/Img/212vip.jpg", // reemplaza con la ruta de la imagen
+        imagen: "/Img/212vip.jpg", 
         id: 1,
         nombre: "212 VIP",
         precio: 89990,
@@ -103,16 +104,12 @@ export default function Catalogo({onAdd}){
 
     const [filteredProducts, setFilteredProducts] = useState(listaPerfumes);
 
-    //Función que se ejecuta al hacer click en el botón filtrar
     const handleFilterClick = () => {
         const newFilteredParfums = listaPerfumes.filter(product => {
-            //Filtrado por precio
             const priceInRange = product.precio >= minPrice && product.precio <= maxPrice;
 
-            //Filtrado por categoría
             const inSelectedCategory = selectedCategory === "todos" || product.categoria === selectedCategory;
 
-            //El producto debe cumplir con ambas condiciones para ser inluido en el filtro
             return priceInRange && inSelectedCategory;
         })
 
@@ -182,11 +179,12 @@ export default function Catalogo({onAdd}){
                                 </span>
                             </div>
                             <div className="precio02">
-                                <span>${product.precio}</span>
+                                <span>${product.precio.toLocaleString('es-CL')}</span>
                                 <span>${product.precio + 30000}</span>
                             </div>
                             </div>
-                            <button className="addCarrito02">Añadir al carrito</button>
+
+                        <Button onClick={() => onAdd(product)} className="addCarrito02">Agregar al carrito</Button>
                         </div>
                 </div>
                 ))}
