@@ -190,14 +190,15 @@ const Home = () => {
           </article>
         </section>
 
-         {/* RECIÉN LLEGADOS */}
+        
+        {/* RECÍEN LLEGADOS */}
         <section>
           <article className="mas-vendidos">
             <h3>🌟Recién llegados</h3>
             <Link to="/catalogo">Ver catálogo completo</Link>
           </article>
 
-          <article className="perfumes">
+          <article className="perfumes-carrusel">
             {/* PERFUME 01 */}
             <div className="perfume">
               <div className="perfume-card">
@@ -249,7 +250,7 @@ const Home = () => {
               </div>
             </div>
 
-              {/* PERFUME 03 */}
+                {/* PERFUME 03 */}
             <div className="perfume">
               <div className="perfume-card">
                 <img
@@ -260,7 +261,7 @@ const Home = () => {
                   <div className="descripcion-div">
                     <span className="marca">Paris Corner</span>
                     <span className="descripcion">
-                      Paris corner Prodigy EDP 100 ML (Hombre & Mujer)
+                      Paris corner Prodigy EDP 100 ML (Hombre & Mujer
                     </span>
                   </div>
                   <div className="rating">
@@ -285,7 +286,7 @@ const Home = () => {
                 />
                 <div className="perfume-card-contenido">
                   <div className="descripcion-div">
-                    <span className="marca">Giorgo Arman</span>
+                    <span className="marca">Giorgo Armani</span>
                     <span className="descripcion">
                       Acqua Di Gio Parfum Recargable 75 ML Tester (H)
                     </span>
