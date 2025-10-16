@@ -6,7 +6,7 @@ export default function AdminHome() {
     return (
             <>
             <main className="adminHome-main">
-                <h1>Admin home</h1>
+                <h1>Admin homeee</h1>
             </main>
             </>
         );
