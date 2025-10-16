@@ -11,7 +11,7 @@ export default function PanelNavbarAdmin() {
                 <aside className="panel-left">
                     <h2>Nicaxel</h2>
                     <div className="funciones-flex">
-                        <Link to="/admin">Inicio</Link>
+                        <Link to="/adminHome">Inicio</Link>
                         <Link to="/verProductos">Ver productos</Link>
                         <Link to="/gestionar">Gestionar</Link>
 
