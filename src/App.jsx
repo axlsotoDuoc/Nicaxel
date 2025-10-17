@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import Carrito from './pages/Carrito';
 import Catalogo from './pages/Catalogo';
 import Contacto from './pages/Contacto';
-import Login from './pages/Login';
+import Login from './pages/login';
 import Nosotros from './pages/Nosotros';
 import Register from './pages/Register';
 import AdminHome from './pages/AdminHome';

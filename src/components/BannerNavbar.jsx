@@ -69,6 +69,7 @@ const Banner = () => {
                     
                             <div className="nav-medio">
                                 <Link to="/nosotros">Sobre nosotros</Link>
+                                <Link to="/catalogo" className="navbar-contacto">Catálogo</Link>
                                 <Link to="/contacto" className="navbar-contacto">Contacto</Link>
                             </div>
                     

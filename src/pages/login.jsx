@@ -48,7 +48,7 @@ export default function Login() {
             if (rolAdmin) {
                 navigate("/adminHome");
             } else {
-                navigate("/home");
+                navigate("/");
             }
         }
 
