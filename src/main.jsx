@@ -8,8 +8,6 @@ import "./styles/login.css";
 import "./styles/nosotros.css"; 
 import "./styles/panelAdmin.css"; 
 import "./styles/adminHome.css"; 
-import "./styles/verProductosAdmin.css"; 
-import "./styles/gestionar.css"; 
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

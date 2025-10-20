@@ -1,30 +1,68 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/panelAdmin.css"; 
 
 export default function PanelNavbarAdmin() {
+    const navigate = useNavigate();
+    const [usuarioActivo, setUsuarioActivo] = useState(null);
+
+    useEffect(() => {
+        const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+        setUsuarioActivo(usuario);
+
+        const actualizarUsuario = () => {
+        const actualizado = JSON.parse(localStorage.getItem("usuarioActivo"));
+        setUsuarioActivo(actualizado);
+        };
+
+        window.addEventListener("usuarioLogueado", actualizarUsuario);
+        window.addEventListener("usuarioLogout", actualizarUsuario);
+
+        return () => {
+        window.removeEventListener("usuarioLogueado", actualizarUsuario);
+        window.removeEventListener("usuarioLogout", actualizarUsuario);
+        };
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem("usuarioActivo");
+        setUsuarioActivo(null);
+        window.dispatchEvent(new Event("usuarioLogout"));
+        navigate("/login");
+    };
+
     return (
-            <>
+        <div className="navbar-admin">
+        <h1>
+            <Link to="/adminHome">Administrador</Link>
+        </h1>
 
-            <main className="admin-main">
-    
-                <aside className="panel-left">
-                    <h2>Nicaxel</h2>
-                    <div className="funciones-flex">
-                        <Link to="/adminHome">Inicio</Link>
-                        <Link to="/verProductos">Ver productos</Link>
-                        <Link to="/gestionar">Gestionar</Link>
+        <div className="navbar-right">
+            <Link to="/addUser">
+            <img src="/Img/addUser.svg" alt="Agregar Usuario" />
+            </Link>
+            <Link to="/addProduct">
+            <img src="/Img/newItem.svg" alt="Agregar Producto" />
+            </Link>
 
-                        <div className="buttons-div">
-                        <Link to="/" className="button-panel-left">Tienda</Link>
-                        <Link to="/login" className="button-panel-left cerrar-sesion"> <img src="/Img/logout (2).svg" alt="Icono de carrito" /></Link>
-                        </div>
-                    </div>
-                </aside>
-                <section className="panel-central">
-                    <h1>Panel de Administrador</h1>
-                </section>
-            </main>
-            </>
-        );
+            {usuarioActivo ? (
+            <button
+                onClick={handleLogout}
+                style={{
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                }}
+                title="Cerrar sesión"
+            >
+                <img src="/Img/logoutBlack.svg" alt="Logout icon" />
+            </button>
+            ) : (
+            <Link to="/login">
+                <img src="/Img/login.svg" alt="Login icon" />
+            </Link>
+            )}
+        </div>
+        </div>
+    );
 }
