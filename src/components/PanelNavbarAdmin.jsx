@@ -11,16 +11,16 @@ export default function PanelNavbarAdmin() {
         setUsuarioActivo(usuario);
 
         const actualizarUsuario = () => {
-        const actualizado = JSON.parse(localStorage.getItem("usuarioActivo"));
-        setUsuarioActivo(actualizado);
+            const actualizado = JSON.parse(localStorage.getItem("usuarioActivo"));
+            setUsuarioActivo(actualizado);
         };
 
         window.addEventListener("usuarioLogueado", actualizarUsuario);
         window.addEventListener("usuarioLogout", actualizarUsuario);
 
         return () => {
-        window.removeEventListener("usuarioLogueado", actualizarUsuario);
-        window.removeEventListener("usuarioLogout", actualizarUsuario);
+            window.removeEventListener("usuarioLogueado", actualizarUsuario);
+            window.removeEventListener("usuarioLogout", actualizarUsuario);
         };
     }, []);
 
@@ -33,36 +33,38 @@ export default function PanelNavbarAdmin() {
 
     return (
         <div className="navbar-admin">
-        <h1>
-            <Link to="/adminHome">Administrador</Link>
-        </h1>
+            <h1>
+                <Link to="/adminHome">
+                    {usuarioActivo ? `Admin - ${usuarioActivo.nombre}` : "Administrador"}
+                </Link>
+            </h1>
 
-        <div className="navbar-right">
-            <Link to="/addUser">
-            <img src="/Img/addUser.svg" alt="Agregar Usuario" />
-            </Link>
-            <Link to="/addProduct">
-            <img src="/Img/newItem.svg" alt="Agregar Producto" />
-            </Link>
+            <div className="navbar-right">
+                <Link to="/addUser">
+                    <img src="/Img/addUser.svg" alt="Agregar Usuario" />
+                </Link>
+                <Link to="/addProduct">
+                    <img src="/Img/newItem.svg" alt="Agregar Producto" />
+                </Link>
 
-            {usuarioActivo ? (
-            <button
-                onClick={handleLogout}
-                style={{
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                }}
-                title="Cerrar sesión"
-            >
-                <img src="/Img/logoutBlack.svg" alt="Logout icon" />
-            </button>
-            ) : (
-            <Link to="/login">
-                <img src="/Img/login.svg" alt="Login icon" />
-            </Link>
-            )}
-        </div>
+                {usuarioActivo ? (
+                    <button
+                        onClick={handleLogout}
+                        style={{
+                            background: "transparent",
+                            border: "none",
+                            cursor: "pointer",
+                        }}
+                        title="Cerrar sesión"
+                    >
+                        <img src="/Img/logoutBlack.svg" alt="Logout icon" />
+                    </button>
+                ) : (
+                    <Link to="/login">
+                        <img src="/Img/login.svg" alt="Login icon" />
+                    </Link>
+                )}
+            </div>
         </div>
     );
 }
