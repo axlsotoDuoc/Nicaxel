@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/main.css"; 
+import "../styles/main.css";
 
 export default function BannerNavbar() {
     const navigate = useNavigate();
     const [usuarioActivo, setUsuarioActivo] = useState(null);
+    const [menuAbierto, setMenuAbierto] = useState(false); 
 
-    // Inicializar usuarioActivo y escuchar cambios
     useEffect(() => {
         const actualizarUsuario = () => {
             const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
             setUsuarioActivo(usuario);
         };
 
-        // Inicializar al cargar
         actualizarUsuario();
-
-        // Escuchar eventos globales
         window.addEventListener("usuarioLogueado", actualizarUsuario);
 
         return () => window.removeEventListener("usuarioLogueado", actualizarUsuario);
@@ -25,10 +22,9 @@ export default function BannerNavbar() {
     const handleLogout = () => {
         localStorage.removeItem("usuarioActivo");
         setUsuarioActivo(null);
-
         window.dispatchEvent(new Event("usuarioLogueado"));
-
         navigate("/login");
+        setMenuAbierto(false);
     };
 
     return (
@@ -44,6 +40,52 @@ export default function BannerNavbar() {
                     <i className="fa-solid fa-hand-pointer fa-xs" style={{ color: "#ffffff" }}></i>
                 </span>
             </div>
+
+            {/* Navbar Mobile */}
+            <nav className="navbar-mobile">
+                <div className="navbar-mobile-top">
+                    <Link to="/" className="tittle">
+                        NICAXEL
+                    </Link>
+
+                    <button
+                        className="burger-button"
+                        onClick={() => setMenuAbierto(!menuAbierto)}
+                        aria-label="Abrir menú"
+                    >
+                        <i className={`fa-solid ${menuAbierto ? "fa-xmark" : "fa-bars"}`}></i>
+                    </button>
+                </div>
+
+                {menuAbierto && (
+                    <div className="burger-menu">
+                        <Link to="/nosotros" onClick={() => setMenuAbierto(false)}>Sobre nosotros</Link>
+                        <Link to="/catalogo" onClick={() => setMenuAbierto(false)}>Catálogo</Link>
+                        <Link to="/contacto" onClick={() => setMenuAbierto(false)}>Contacto</Link>
+
+                        {!usuarioActivo ? (
+                                <Link to="/login" onClick={() => setMenuAbierto(false)} className="logout-button-flex">
+                                    <img src="/Img/login.svg" alt="Login icon" /> 
+                                    <span>Iniciar sesión</span>
+                                </Link>
+                        ) : (
+                            <button onClick={handleLogout} className="logout-button-flex">
+                                <img src="/Img/logoutBlack.svg" alt="Logout icon" />
+                                <span>Cerrar sesión</span>
+                            </button>
+                        )}
+
+                        <Link
+                            to="/carrito"
+                            className="carrito-mobile"
+                            onClick={() => setMenuAbierto(false)}
+                        >
+                            <img src="/Img/carrito.svg" alt="Carrito" />
+                            <span>Ver carrito (1)</span>
+                        </Link>
+                    </div>
+                )}
+            </nav>
 
             {/* Navbar Desktop */}
             <nav className="navbar-dekstop">
@@ -89,4 +131,5 @@ export default function BannerNavbar() {
         </div>
     );
 }
+
 

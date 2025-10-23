@@ -15,7 +15,6 @@ import AdminHome from './pages/AdminHome';
 import AgregarProducto from "./pages/AgregarProducto";
 import AgregarUsuario from "./pages/AgregarUsuario";
 
-// Componente para rutas privadas
 const PrivateRoute = ({ children }) => {
     const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
     return usuarioActivo && usuarioActivo.rol === "ADMIN" ? children : <Navigate to="/login" />;
@@ -23,7 +22,6 @@ const PrivateRoute = ({ children }) => {
 
 export default function App() {
     
-    // Inicializar el usuario base Admin si no existe
     useEffect(() => {
         const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
         if (!usuarios.some(u => u.correo === "axel@admin.cl")) {
