@@ -54,7 +54,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-right: 1rem;
+    margin: 0 auto;
+    max-width: 70%;
 }
 
 .perfume02 {
@@ -138,4 +139,21 @@
 .addCarrito02:hover {
     background: rgb(231, 89, 89);
 }
+
+/* Notificaciones */
+.Toastify__toast-container {
+    font-family: 'Arial', sans-serif;
+}
+
+.Toastify__toast--success {
+    background: #4CAF50 !important;  
+    color: #fff !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+}
+
+.Toastify__progress-bar--success {
+    background: #ffffff !important;
+}
+
 

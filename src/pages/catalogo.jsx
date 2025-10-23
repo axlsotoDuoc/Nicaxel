@@ -1,6 +1,8 @@
-import React from "react";
-import { useState } from 'react'; 
-import Button from 'react-bootstrap/Button';
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
+
 
 const listaPerfumes = [
     {
@@ -62,7 +64,7 @@ const listaPerfumes = [
     {
         imagen: "/Img/Yara-Lattafa.jpeg",
         id: 8,
-        nombre: "Yara de Lattafa",
+        nombre: "Yara",
         precio: 84990,
         descripcion: "Fragancia árabe femenina con notas florales y frutales, elegante y delicada.",
         categoria: "Lattafa"
@@ -78,7 +80,7 @@ const listaPerfumes = [
     {
         imagen: "/Img/Hawas.jpeg",
         id: 10,
-        nombre: "Hawas de Rasasi",
+        nombre: "Hawas Ice",
         precio: 29990,
         descripcion: "Fragancia árabe masculina fresca y deportiva, con notas frutales y amaderadas.",
         categoria: "Rasasi"
@@ -86,7 +88,7 @@ const listaPerfumes = [
     {
         imagen: "/Img/Eclaire-Lattafa.jpeg",
         id: 11,
-        nombre: "Eclaire de Layyafa",
+        nombre: "Eclaire de Lattafa",
         precio: 89990,
         descripcion: "Perfume árabe femenino con aroma dulce y floral, elegante y duradero.",
         categoria: "Lattafa"
@@ -94,38 +96,51 @@ const listaPerfumes = [
 ];
 
 
-export default function Catalogo({onAdd}){
-
-
+export default function Catalogo() {
     const [minPrice, setMinPrice] = useState(0);
     const [maxPrice, setMaxPrice] = useState(300000);
-
     const [selectedCategory, setSelectedCategory] = useState("todos");
-
     const [filteredProducts, setFilteredProducts] = useState(listaPerfumes);
 
     const handleFilterClick = () => {
-        const newFilteredParfums = listaPerfumes.filter(product => {
+        const newFilteredParfums = listaPerfumes.filter((product) => {
             const priceInRange = product.precio >= minPrice && product.precio <= maxPrice;
-
-            const inSelectedCategory = selectedCategory === "todos" || product.categoria === selectedCategory;
-
+            const inSelectedCategory =
+                selectedCategory === "todos" || product.categoria === selectedCategory;
             return priceInRange && inSelectedCategory;
-        })
+        });
+        setFilteredProducts(newFilteredParfums);
+    };
 
-        setFilteredProducts(newFilteredParfums)
-    }
-    
+    const handleAddToCart = (product) => {
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const existente = carrito.find((item) => item.id === product.id);
+
+        if (existente) {
+            existente.cantidad += 1;
+        } else {
+            carrito.push({ ...product, cantidad: 1 });
+        }
+
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+
+        toast.success(`${product.nombre} fue agregado al carrito 🛒`, {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            pauseOnHover: true,
+            theme: "colored",
+        });
+    };
+
     return (
         <main className="catalogo-main">
-
             <h1 className="h1-catalogo">Catálogo de productos</h1>
 
             <section className="filtro-section">
-
                 <label className="filtro">
                     <h3 className="h3-filtro">Precio mínimo</h3>
-                    <input 
+                    <input
                         type="number"
                         value={minPrice}
                         onChange={(e) => setMinPrice(Number(e.target.value))}
@@ -133,10 +148,9 @@ export default function Catalogo({onAdd}){
                     />
                 </label>
 
-                
                 <label className="filtro">
-                        <h3 className="h3-filtro">Precio máximo</h3>
-                        <input 
+                    <h3 className="h3-filtro">Precio máximo</h3>
+                    <input
                         type="number"
                         value={maxPrice}
                         onChange={(e) => setMaxPrice(Number(e.target.value))}
@@ -145,50 +159,63 @@ export default function Catalogo({onAdd}){
                 </label>
 
                 <label>
-                        <h3 className="h3-filtro">Marca</h3>
-                        <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)} 
-                            className="select-filtro">
-                            <option value="todos" className="option">Todos</option>
-                            <option value="Carolina Herrera" className="option">Carolina Herrera</option>
-                            <option value="Paco Rabanne" className="option">Paco Rabanne</option>
-                            <option value="Giorgio Armani" className="option">Giorgio Armani</option>
-                            <option value="Azzaro" className="option">Azzaro</option>
-                            <option value="Versace" className="option">Versace</option>
-                            <option value="Al Haramain" className="option">Al Haramain</option>
-                            <option value="Versace" className="option">Versace</option>
-                            <option value="Paris Corner" className="option">Paris Corner</option>
-                            <option value="Lattafa" className="option">Lattafa</option>
-                            <option value="Jean Paul Gaultier" className="option">Jean Paul Gaultier</option>
-                            <option value="Rasasi" className="option">Rasasi</option>
-                        </select>
+                    <h3 className="h3-filtro">Marca</h3>
+                    <select
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        className="select-filtro"
+                    >
+                        <option value="todos">Todos</option>
+                        <option value="Carolina Herrera">Carolina Herrera</option>
+                        <option value="Paco Rabanne">Paco Rabanne</option>
+                        <option value="Giorgio Armani">Giorgio Armani</option>
+                        <option value="Azzaro">Azzaro</option>
+                        <option value="Versace">Versace</option>
+                        <option value="Al Haramain">Al Haramain</option>
+                        <option value="Paris Corner">Paris Corner</option>
+                        <option value="Lattafa">Lattafa</option>
+                        <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+                        <option value="Rasasi">Rasasi</option>
+                    </select>
                 </label>
 
-                <button onClick={handleFilterClick} className="filtrar-button">Aplicar filtros</button>
+                <button onClick={handleFilterClick} className="filtrar-button">
+                    Aplicar filtros
+                </button>
             </section>
 
             <section className="catalogo-container">
-                {filteredProducts.map(product => (
+                {filteredProducts.map((product) => (
                     <div className="perfume02" key={product.id}>
                         <div className="perfume-card02">
-                            <img src={product.imagen} alt={product.nombre} className="product-image02"/>
+                            <img
+                                src={product.imagen}
+                                alt={product.nombre}
+                                className="product-image02"
+                            />
                             <div className="perfume-card-contenido02">
-                            <div className="descripcion-div02">
-                                <span className="marca02">{product.categoria}</span>
-                                <span className="descripcion02">
-                                {product.nombre}
-                                </span>
-                            </div>
-                            <div className="precio02">
-                                <span>${product.precio.toLocaleString('es-CL')}</span>
-                                <span>${product.precio + 30000}</span>
-                            </div>
+                                <div className="descripcion-div02">
+                                    <span className="marca02">{product.categoria}</span>
+                                    <span className="descripcion02">{product.nombre}</span>
+                                </div>
+                                <div className="precio02">
+                                    <span>${product.precio.toLocaleString("es-CL")}</span>
+                                    <span>
+                                        ${(product.precio + 30000).toLocaleString("es-CL")}
+                                    </span>
+                                </div>
                             </div>
 
-                        <Button onClick={() => onAdd(product)} className="addCarrito02">Agregar al carrito</Button>
+                            <Button
+                                onClick={() => handleAddToCart(product)}
+                                className="addCarrito02"
+                            >
+                                Agregar al carrito
+                            </Button>
                         </div>
-                </div>
+                    </div>
                 ))}
             </section>
-        </main> 
-    )
+        </main>
+    );
 }
