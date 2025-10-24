@@ -56,6 +56,16 @@ export default function BannerNavbar() {
                         <i className={`fa-solid ${menuAbierto ? "fa-xmark" : "fa-bars"}`}></i>
                     </button>
                 </div>
+                
+                <ul className="nav-menu nav-menu--a11y">
+                <li className="nav-item"><Link className="nav-link" to="/nosotros">Sobre nosotros</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/blog">Blog</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/catalogo">Catálogo</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/contacto">Contacto</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/login">Iniciar sesión</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/carrito">Ver carrito 🛒(1)</Link></li>
+                </ul>
+
 
                 {menuAbierto && (
                     <div className="burger-menu">
