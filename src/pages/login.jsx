@@ -71,7 +71,7 @@ export default function Login() {
             <h1 className="form-h1">Iniciar sesión</h1>
 
             <section className="formulario-div">
-                <form onSubmit={handleSubmit} id="miFormulario">
+                <form onSubmit={handleSubmit} id="miFormulario" noValidate>
                     <label htmlFor="correo">Correo electrónico*</label>
                     <input
                         type="email"
@@ -97,18 +97,18 @@ export default function Login() {
                     <div className="remember-register-flex">
                         <div className="remember-me">
                             <input
-                                type="checkbox"
-                                className="checkbox"
-                                id="recordar"
-                                checked={recordar}
-                                onChange={() => setRecordar(!recordar)}
+                            type="checkbox"
+                            className="checkbox"
+                            id="recordar"
+                            checked={recordar}
+                            onChange={() => setRecordar(!recordar)}
                             />
-                            Recordar contraseña
+                            <label htmlFor="recordar">Recordar contraseña</label>
                         </div>
                         <span>
                             ¿No tienes cuenta?{" "}
                             <Link to="/register" className="register-here">
-                                Regístrate aquí
+                            Regístrate aquí
                             </Link>
                         </span>
                     </div>
