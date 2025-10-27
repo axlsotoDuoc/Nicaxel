@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
 
@@ -60,7 +59,6 @@ const Contact = () => {
             <h2 className="form-h2">Información requerida</h2>
 
             <form onSubmit={handleSubmit} id="miFormulario">
-                {/* Nombre */}
                 <label htmlFor="nombre">Nombre y apellido/s*</label>
                 <input
                 type="text"
@@ -74,7 +72,6 @@ const Contact = () => {
                 <span style={{ color: "rgb(179, 56, 56)" }}>{errorNombre}</span>
                 )}
 
-                {/* Correo electrónico */}
                 <label htmlFor="correo">Correo electrónico*</label>
                 <input
                 type="email"
@@ -88,7 +85,6 @@ const Contact = () => {
                 <span style={{ color: "rgb(179, 56, 56)" }}>{errorCorreo}</span>
                 )}
 
-                {/* Mensaje */}
                 <label htmlFor="mensaje">Mensaje (máx 200 caracteres):</label>
                 <textarea
                 id="mensaje"
@@ -105,7 +101,6 @@ const Contact = () => {
                 )}
                 <p id="contador">{contador} caracteres restantes</p>
 
-                {/* Enviar */}
                 <button type="submit">Enviar</button>
             </form>
             </section>

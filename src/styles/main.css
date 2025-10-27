@@ -20,6 +20,10 @@ ul li {
     list-style: none;
 }
 
+.nav-menu--a11y {
+    display: none;
+}
+
 /* ---------------------- NAVBAR ------------------------- */
 nav {
     display: flex;

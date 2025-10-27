@@ -20,25 +20,21 @@ export default function Register() {
         let valido = true;
         const nuevosErrores = { nombre: "", correo: "", password: "", repeat: "" };
 
-        // Validar nombre
         if (!nombre.trim()) {
             nuevosErrores.nombre = "El nombre no puede estar vacío.";
             valido = false;
         }
 
-        // Validar correo
         if (!correo.includes("@")) {
             nuevosErrores.correo = "Ingrese un correo válido.";
             valido = false;
         }
 
-        // Validar contraseña
         if (password1.length < 4) {
             nuevosErrores.password = "La contraseña debe tener al menos 4 caracteres.";
             valido = false;
         }
 
-        // Validar coincidencia de contraseñas
         if (password1 !== password2) {
             nuevosErrores.repeat = "Las contraseñas no coinciden.";
             valido = false;
@@ -47,10 +43,8 @@ export default function Register() {
         setErrores(nuevosErrores);
         if (!valido) return;
 
-        // Guardar usuario
         const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-        // Verificar que el correo no exista
         if (usuarios.some(u => u.correo === correo)) {
             setErrores({ ...nuevosErrores, correo: "Ya existe un usuario con este correo." });
             return;

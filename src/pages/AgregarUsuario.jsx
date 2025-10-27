@@ -3,6 +3,7 @@ import { AdminContext } from "../layouts/LayoutAdmin";
 import "../styles/agregarUsuario.css";
 
 export default function AgregarUsuario() {
+    
     const { usuarios, setUsuarios } = useContext(AdminContext);
     const [nuevoUsuario, setNuevoUsuario] = useState({
         nombre: "",
