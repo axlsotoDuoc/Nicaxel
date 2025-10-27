@@ -91,7 +91,7 @@ export default function BannerNavbar() {
                             onClick={() => setMenuAbierto(false)}
                         >
                             <img src="/Img/carrito.svg" alt="Carrito" />
-                            <span>Ver carrito (1)</span>
+                            <span>Ver carrito</span>
                         </Link>
                     </div>
                 )}
@@ -134,7 +134,6 @@ export default function BannerNavbar() {
                         <Link to="/carrito">
                             <img src="/Img/carrito.svg" alt="Icono de carrito" />
                         </Link>
-                        <span>(1)</span>
                     </div>
                 </div>
             </nav>
