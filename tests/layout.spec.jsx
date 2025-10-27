@@ -12,7 +12,6 @@ describe("Layout básico", () => {
       </MemoryRouter>
     );
 
-    
     expect(screen.getAllByRole("link", { name: /nicaxel/i })[0]).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /sobre nosotros/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /blog/i }).length).toBeGreaterThan(0);
@@ -29,9 +28,7 @@ describe("Layout básico", () => {
       </MemoryRouter>
     );
 
-   
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
 
-   
   });
 });

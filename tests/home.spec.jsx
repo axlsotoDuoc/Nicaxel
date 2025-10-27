@@ -10,6 +10,5 @@ describe("Home (smoke)", () => {
         <Home />
       </MemoryRouter>
     );
-    
   });
 });

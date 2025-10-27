@@ -8,9 +8,8 @@ describe("Contacto", () => {
     render(<Contacto />);
 
     const area = screen.getByRole("textbox", { name: /mensaje/i });
-    await userEvent.type(area, "hola nico"); // 9 caracteres
+    await userEvent.type(area, "hola nico"); 
 
-   
     expect(screen.getByText(/191\s*caracteres\s*restantes/i)).toBeInTheDocument();
   });
 
@@ -20,7 +19,6 @@ describe("Contacto", () => {
     const boton = screen.getByRole("button", { name: /enviar/i });
     await userEvent.click(boton);
 
-    
     expect(
       screen.getByText(/Debes ingresar tu nombre y al menos un apellido\./i)
     ).toBeInTheDocument();
