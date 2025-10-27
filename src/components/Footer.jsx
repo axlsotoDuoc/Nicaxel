@@ -5,7 +5,6 @@ import "../styles/main.css";
 const Footer = () => {
     return (
         <>
-                {/* Footer */}
                     <footer>
                         <div className="seccion-footer">
                         <h3>Horario de atención</h3>
